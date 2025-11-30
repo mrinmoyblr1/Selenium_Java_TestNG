@@ -3,6 +3,7 @@ package Selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,11 +11,11 @@ import java.time.Duration;
 
 public class Locators {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
-        WebDriver driver = new ChromeDriver();
+//        System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
+//        WebDriver driver = new ChromeDriver();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 //        System.setProperty("webdriver.gecko.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/geckodriver");
-//        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new FirefoxDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         driver.findElement(By.id("inputUsername")).sendKeys("Mrinmoy");
         driver.findElement(By.name("inputPassword")).sendKeys("Biswas");
