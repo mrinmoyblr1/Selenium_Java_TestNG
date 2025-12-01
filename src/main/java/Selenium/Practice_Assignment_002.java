@@ -1,5 +1,6 @@
 package Selenium;
 
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,16 +25,9 @@ public class Practice_Assignment_002 {
         driver.findElement(By.name("bday")).sendKeys("11/30/2025");
         Thread.sleep(4000);
         driver.findElement(By.xpath("//input[@value='Submit']")).click();
-//        driver.findElement(By.className(".btn.btn-success")).click();
-
         System.out.println(driver.findElement(By.className("alert-success")).getText());
+        System.out.println(driver.findElement(By.cssSelector(".alert-success")).getText());
 
-
-
-        System.out.println(driver);
-
-
-        Thread.sleep(9000);
         driver.quit();
     }
 }
