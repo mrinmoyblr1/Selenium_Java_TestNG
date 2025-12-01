@@ -15,7 +15,10 @@ public class Assignment {
         driver.findElement(By.id("name")).sendKeys(text);
         driver.findElement(By.id("alertbtn")).click();
         Thread.sleep(4000);
+        System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
+
+
 
 
         Thread.sleep(9000);
