@@ -28,6 +28,10 @@ public class Practice_Assignment_002 {
         System.out.println(driver.findElement(By.className("alert-success")).getText());
         System.out.println(driver.findElement(By.cssSelector(".alert-success")).getText());
 
+
+        
+
+
         driver.quit();
     }
 }
