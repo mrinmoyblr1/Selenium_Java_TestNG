@@ -22,14 +22,11 @@ public class Base {
         List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
 
         for (int i = 0; i < products.size(); i++) {
-            String name = products.get(i).getText().split("-");
-            String[] pp = name.split(" ");
-            System.out.println(pp[0]);
 
+            String[] name = products.get(i).getText().split("-");
+            String formattedName = name[0].trim();
 
-
-
-            if (itemNeededList.contains(name)) {
+            if (itemNeededList.contains(formattedName)) {
                 driver.findElement(By.xpath("//button[text()='ADD TO CART']")).click();
             }
         }
@@ -47,7 +44,7 @@ public class Base {
         // XPath to click on "ADD TO CART"
         //*[contains(text(), 'Cucumber')]/following-sibling::div[2]/button
 
-        Thread.sleep(5000);
+        Thread.sleep(9000);
         driver.quit();
     }
 }
