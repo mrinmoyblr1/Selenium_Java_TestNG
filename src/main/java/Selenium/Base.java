@@ -21,14 +21,11 @@ public class Base {
 
         List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
 
-
         for (int i = 0; i < products.size(); i++) {
-
             String name = products.get(i).getText();
-
             if (name.contains("Cucumber")) {
                 driver.findElement(By.xpath("//button[text()='ADD TO CART']")).click();
-
+                break;
             }
         }
 
