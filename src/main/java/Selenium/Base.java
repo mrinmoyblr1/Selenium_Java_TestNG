@@ -15,26 +15,35 @@ public class Base {
         List itemNeededList = Arrays.asList(itemsNeeded);
 
 
-
         System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 
+        List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
 
-        List<WebElement> allProducts = driver.findElements(By.cssSelector("h4.product-name"));
-        for (WebElement product : allProducts) {
 
-            for (int i = 0; i < itemsNeeded.length; i++) {
+        for (int i = 0; i < products.size(); i++) {
 
-                if (product.getText().contains(itemsNeeded[i])) {
-                    driver.findElement(By.xpath("//button[text()=\"ADD TO CART\"]")).click();
-                    System.out.println(product.getText());
-                    break;
-                }
+            String name = products.get(i).getText();
+
+            if (name.contains("Cucumber")) {
+                driver.findElement(By.xpath("//button[text()='ADD TO CART']")).click();
+
             }
         }
 
 
+//        for (WebElement product : allProducts) {
+//
+//            for (int i = 0; i < itemsNeeded.length; i++) {
+//
+//                if (product.getText().contains(itemsNeeded[i])) {
+//                    driver.findElement(By.xpath("//button[text()=\"ADD TO CART\"]")).click();
+//                    System.out.println(product.getText());
+//                    break;
+//                }
+//            }
+//        }
         // XPath to click on "ADD TO CART"
         //*[contains(text(), 'Cucumber')]/following-sibling::div[2]/button
 
