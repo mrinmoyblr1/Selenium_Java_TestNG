@@ -10,8 +10,8 @@ import java.util.List;
 
 public class Base {
     public static void main(String[] args) throws InterruptedException {
-        String text = "Mrinmoy";
-        String[] itemsNeeded = {"Cucumber", "Brocolli"};
+
+        String[] itemsNeeded = {"Cucumber", "Brocolli", "Beetroot"};
         List itemNeededList = Arrays.asList(itemsNeeded);
 
 
@@ -22,18 +22,21 @@ public class Base {
         List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
 
         for (int i = 0; i < products.size(); i++) {
-            String name = products.get(i).getText();
-            if (name.contains("Cucumber")) {
+            String name = products.get(i).getText().split("-");
+            String[] pp = name.split(" ");
+            System.out.println(pp[0]);
+
+
+
+
+            if (itemNeededList.contains(name)) {
                 driver.findElement(By.xpath("//button[text()='ADD TO CART']")).click();
-                break;
             }
         }
 
 
-//        for (WebElement product : allProducts) {
-//
-//            for (int i = 0; i < itemsNeeded.length; i++) {
-//
+//        for (WebElement product : allProducts) {//
+//            for (int i = 0; i < itemsNeeded.length; i++) {//
 //                if (product.getText().contains(itemsNeeded[i])) {
 //                    driver.findElement(By.xpath("//button[text()=\"ADD TO CART\"]")).click();
 //                    System.out.println(product.getText());
