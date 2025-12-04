@@ -40,7 +40,8 @@ public class Base {
             if (itemNeededList.contains(formattedName)) {
                 j++;
 //                driver.findElement(By.xpath("//*[contains(text(),\"" + formattedName + "\")]/following-sibling::div[2]/button")).click();
-                driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+//                driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+                driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
                 if (j == itemNeededList.size()) {
                     break;
                 }
@@ -62,7 +63,7 @@ public class Base {
         // XPath to click on "ADD TO CART"
         //*[contains(text(), 'Cucumber')]/following-sibling::div[2]/button
 
-        Thread.sleep(2000);
+        Thread.sleep(10000);
         driver.quit();
     }
 }
