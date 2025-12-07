@@ -27,15 +27,15 @@ public class Base {
 
         driver.findElement(By.cssSelector("img[alt='Cart']")).click();
         driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.cssSelector(".promoCode")).sendKeys("rahulshettyacademy");
-        driver.findElement(By.cssSelector(".promoBtn")).click();
 
         // Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".promoCode")));
+        driver.findElement(By.cssSelector(".promoCode")).sendKeys("rahulshettyacademy");
+        driver.findElement(By.cssSelector(".promoBtn")).click();
+
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".promoInfo")));
-
-
         System.out.println(driver.findElement(By.cssSelector(".promoInfo")).getText());
 
 
@@ -46,17 +46,14 @@ public class Base {
 
     public void addItems(WebDriver driver, String[] itemsNeeded) {
         int j = 0;
-        List itemNeededList = Arrays.asList(itemsNeeded);
-        for (int i = 0; i < itemNeededList.size(); i++) {
-            System.out.println(itemNeededList.get(i));
-        }
+        List itemNeededList = Arrays.asList(itemsNeeded);  // Converting Array to ArrayList
+
         List<WebElement> products = driver.findElements(By.cssSelector("h4.product-name"));
         System.out.println(itemNeededList.size());
         System.out.println(products.size());
         for (int i = 0; i < products.size(); i++) {
             String[] name = products.get(i).getText().split("-");
             String formattedName = name[0].trim();
-            System.out.println(formattedName);
             if (itemNeededList.contains(formattedName)) {
                 j++;
 //                driver.findElement(By.xpath("//*[contains(text(),\"" + formattedName + "\")]/following-sibling::div[2]/button")).click();
