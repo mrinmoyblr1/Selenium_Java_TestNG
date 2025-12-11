@@ -15,6 +15,7 @@ public class Practice_Assignment_004 {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("a[href*='windows']")).click();
         driver.findElement(By.cssSelector("a[href*='windows/new']")).click();
+        
         String parentID = driver.getWindowHandle();
         Set<String> allwindows = driver.getWindowHandles();
         for (String windowID : allwindows) {
