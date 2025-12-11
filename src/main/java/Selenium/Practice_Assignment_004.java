@@ -2,14 +2,8 @@ package Selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -19,11 +13,8 @@ public class Practice_Assignment_004 {
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-
         driver.findElement(By.cssSelector("a[href*='windows']")).click();
         driver.findElement(By.cssSelector("a[href*='windows/new']")).click();
-
-
         String parentID = driver.getWindowHandle();
         Set<String> allwindows = driver.getWindowHandles();
         for (String windowID : allwindows) {
@@ -40,4 +31,3 @@ public class Practice_Assignment_004 {
         driver.quit();
     }
 }
-
