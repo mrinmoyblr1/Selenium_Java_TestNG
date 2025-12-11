@@ -45,15 +45,16 @@ public class WindowHandles {
         driver.switchTo().window(childID);
 
 
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         System.out.println("Child window title: " + driver.getTitle());
         String Emaill_ID = driver.findElement(By.cssSelector("a[href*='mailto:mentor']")).getText();
         System.out.println(Emaill_ID);
-        Thread.sleep(9000);
+        Thread.sleep(2000);
 
         driver.switchTo().window(parentID);
+        System.out.println("Parent window title: " + driver.getTitle());
         driver.findElement(By.cssSelector("#username")).sendKeys(Emaill_ID);
-        Thread.sleep(9000);
+        Thread.sleep(2000);
         driver.quit();
     }
 }
