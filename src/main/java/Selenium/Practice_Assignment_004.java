@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +13,8 @@ public class Practice_Assignment_004 {
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.cssSelector("a[href*='windows']")).click();
         driver.findElement(By.cssSelector("a[href*='windows/new']")).click();
 

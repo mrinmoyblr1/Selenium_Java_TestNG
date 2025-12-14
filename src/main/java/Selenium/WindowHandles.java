@@ -19,7 +19,8 @@ public class WindowHandles {
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/loginpagePractise/");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.findElement(By.cssSelector(".blinkingText")).click();
 

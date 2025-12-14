@@ -16,7 +16,7 @@ public class Practice_Assignment_003 {
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/loginpagePractise//");
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
         driver.findElement(By.cssSelector("#username")).sendKeys("rahulshettyacademy");
         driver.findElement(By.cssSelector("#password")).sendKeys("learning");
