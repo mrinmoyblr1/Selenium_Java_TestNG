@@ -49,6 +49,7 @@ public class Scope {
 //            // Like this we can click on Back Button in browser
 //            driver.navigate().back();
         Thread.sleep(2000);
+        System.out.println("Press any key to continue...");
         driver.quit();
     }
 }
