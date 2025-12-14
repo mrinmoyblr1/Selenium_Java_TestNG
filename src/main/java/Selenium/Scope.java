@@ -38,7 +38,7 @@ public class Scope {
                 columnDriver.findElements(By.cssSelector("a")).get(i).sendKeys(clickOnLinkTab);
             }
         }
-        
+
         Set<String> abc = driver.getWindowHandles();
         Iterator<String> it = abc.iterator();
         while (it.hasNext()) {
