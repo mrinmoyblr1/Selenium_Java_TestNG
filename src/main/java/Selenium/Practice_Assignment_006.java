@@ -28,6 +28,7 @@ public class Practice_Assignment_006 {
         boolean exists = alertText.toLowerCase().contains(checkBoxName.toLowerCase());
         System.out.println(exists); // Output: true
         Thread.sleep(4000);
+        System.out.println("Press any key to continue...");
         driver.quit();
     }
 }
