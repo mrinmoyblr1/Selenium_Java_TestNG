@@ -27,16 +27,15 @@ public class Scope {
         WebElement columnDriver = footerDriver.findElement(By.cssSelector("ul"));
         System.out.println(columnDriver.findElements(By.cssSelector("a")).size());
         Thread.sleep(6000);
-
-
-        String parentWindow = driver.getWindowHandle();
-
+        
 
         for (int i = 0; i < columnDriver.findElements(By.cssSelector("a")).size(); i++) {
 //            System.out.println(columnDriver.findElements(By.cssSelector("a")).get(i).getText());
             columnDriver.findElements(By.cssSelector("a")).get(i).click();
+            System.out.println(driver.getTitle());
 
-            driver.switchTo().window(parentWindow);
+            // Like this we can click on Back Button in browser
+            driver.navigate().back();
 
         }
 
