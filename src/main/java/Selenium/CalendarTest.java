@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CalendarTest {
     public static void main(String[] args) throws InterruptedException {
@@ -21,20 +22,30 @@ public class CalendarTest {
 
         driver.findElement(By.cssSelector(".react-date-picker__inputGroup__input.react-date-picker__inputGroup__year")).click();
         driver.findElement(By.cssSelector(".react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from")).click();
-
         driver.findElement(By.cssSelector(".react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from")).click();
 
-        WebElement yearClick = driver.findElement(By.cssSelector(".react-calendar__decade-view"));
-        System.out.println(yearClick.findElements(By.cssSelector("button")).size());
+        driver.findElement(By.xpath("//button[text()='" + year + "']")).click();
+        Thread.sleep(6000);
+//        driver.findElements(By.xpath(".react-calendar__year-view__months__month")).get(Integer.parseInt(monthNumber) - 1).click();
+        driver.findElements(By.cssSelector(".react-calendar__year-view__months__month")).get(Integer.parseInt(monthNumber) - 1).click();
         Thread.sleep(2000);
+        driver.findElement(By.xpath("//abbr[text()='" + date + "']")).click();
 
-        for (int i = 0; i < yearClick.findElements(By.cssSelector("button")).size(); i++) {
-            if (yearClick.findElements(By.cssSelector("button")).get(i).getText().equals(year)) {
-                yearClick.findElements(By.cssSelector("button")).get(i).click();
-                Thread.sleep(6000);
-                break;
-            }
-        }
+
+        System.out.println(driver.findElement(By.cssSelector(".react-date-picker__wrapper")).getText());
+
+
+//        WebElement yearClick = driver.findElement(By.cssSelector(".react-calendar__decade-view"));
+//        System.out.println(yearClick.findElements(By.cssSelector("button")).size());
+//        Thread.sleep(2000);
+//
+//        for (int i = 0; i < yearClick.findElements(By.cssSelector("button")).size(); i++) {
+//            if (yearClick.findElements(By.cssSelector("button")).get(i).getText().equals(year)) {
+//                yearClick.findElements(By.cssSelector("button")).get(i).click();
+//                Thread.sleep(6000);
+//                break;
+//            }
+//        }
 
 
         Thread.sleep(3000);
