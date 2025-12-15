@@ -19,6 +19,7 @@ public class CalendarTest {
         String date = "15";
         String year = "2027";
         String[] expectedList = {monthNumber, date, year};
+
         driver.findElement(By.cssSelector(".react-date-picker__inputGroup__input.react-date-picker__inputGroup__year")).click();
         driver.findElement(By.cssSelector(".react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from")).click();
         driver.findElement(By.cssSelector(".react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from")).click();
@@ -31,6 +32,8 @@ public class CalendarTest {
         List<WebElement> actualList = driver.findElements(By.cssSelector(".react-date-picker__inputGroup__input"));
         for (int i = 0; i < actualList.size(); i++) {
             System.out.println(actualList.get(i).getAttribute("value"));
+            // This is very important
+            // Here we are dynamically comparing values between two Lists
             Assert.assertEquals(actualList.get(i).getAttribute("value"), expectedList[i]);
         }
         Thread.sleep(3000);
