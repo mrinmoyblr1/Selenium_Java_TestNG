@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 public class CalendarTest {
     public static void main(String[] args) throws InterruptedException {
@@ -33,7 +34,13 @@ public class CalendarTest {
 
 
         System.out.println(driver.findElement(By.cssSelector(".react-date-picker__wrapper")).getText());
-        System.out.println("====");
+
+        List<WebElement> actualList = driver.findElements(By.cssSelector(".react-date-picker__inputGroup__input"));
+
+
+        for (WebElement ss : actualList) {
+
+        }
 
 
 //        WebElement yearClick = driver.findElement(By.cssSelector(".react-calendar__decade-view"));
