@@ -29,15 +29,10 @@ public class CalendarTest {
         Thread.sleep(2000);
 
         for (int i = 0; i < yearClick.findElements(By.cssSelector("button")).size(); i++) {
-            System.out.println("=========");
-            String ss = yearClick.findElements(By.cssSelector("button")).get(i).getText();
-            System.out.println(ss);
-            Thread.sleep(2000);
             if (yearClick.findElements(By.cssSelector("button")).get(i).getText().equals(year)) {
-                System.out.println("Year:" + year);
-                Thread.sleep(2000);
                 yearClick.findElements(By.cssSelector("button")).get(i).click();
                 Thread.sleep(6000);
+                break;
             }
         }
 
