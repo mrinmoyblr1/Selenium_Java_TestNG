@@ -33,6 +33,7 @@ public class CalendarTest {
 
 
         System.out.println(driver.findElement(By.cssSelector(".react-date-picker__wrapper")).getText());
+        System.out.println("====");
 
 
 //        WebElement yearClick = driver.findElement(By.cssSelector(".react-calendar__decade-view"));
