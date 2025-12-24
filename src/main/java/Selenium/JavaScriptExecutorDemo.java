@@ -1,15 +1,12 @@
 package Selenium;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
 import java.time.Duration;
 import java.util.List;
-
 public class JavaScriptExecutorDemo {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
@@ -25,14 +22,10 @@ public class JavaScriptExecutorDemo {
         for (WebElement e : ss) {
             a = a + Integer.parseInt(e.getText());
         }
-
         System.out.println(a);
         String bb = driver.findElement(By.cssSelector(".totalAmount")).getText().split(":")[1].trim();
         System.out.println(bb);
-
         Assert.assertEquals(Integer.parseInt(bb), a);
-
-
         Thread.sleep(3000);
         driver.quit();
     }
