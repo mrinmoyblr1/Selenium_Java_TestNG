@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
@@ -26,22 +28,23 @@ public class BrokenLinks {
         // Java method which will call URLs and get the status codes.
         // If the status code is >400 then URL is not working -> URL is broken associated to the link
 
+        List<WebElement> links = driver.findElements(By.cssSelector("a[href*='https']"));
+        SoftAssert a = new SoftAssert();
 
-        String url = driver.findElement(By.cssSelector("a[href*='broken']")).getDomAttribute("href");
-        System.out.println(url);
+        for (WebElement link : links) {
+            String url = link.getDomAttribute("href");
+            System.out.println(url);
 
-        // To get status code  from any END POINT/URL:
-        HttpsURLConnection conn = (HttpsURLConnection) new URL(url).openConnection();
-        conn.setRequestMethod("HEAD");
-        conn.connect();
-        int responseCode = conn.getResponseCode();
+            // To get status code  from any END POINT/URL:
+            HttpsURLConnection conn = (HttpsURLConnection) new URL(url).openConnection();
+            conn.setRequestMethod("HEAD");
+            conn.connect();
+            int responseCode = conn.getResponseCode();
+            System.out.println(responseCode);
 
-        System.out.println(responseCode);
-
-        List<WebElement> element = driver.findElements(By.cssSelector("a[href*='http']"));
-        for (WebElement link : element) {
-            System.out.println(link.getDomAttribute("href"));
+            a.assertTrue(responseCode < 400, "The link with Text " + link.getText() + " is broken with code " + responseCode);
         }
+        a.assertAll();
 
 
         Thread.sleep(2000);
