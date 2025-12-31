@@ -30,7 +30,7 @@ public class BrokenLinks {
         String url = driver.findElement(By.cssSelector("a[href*='broken']")).getDomAttribute("href");
         System.out.println(url);
 
-
+        // To get status code  from any END POINT/URL:
         HttpsURLConnection conn = (HttpsURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("HEAD");
         conn.connect();
@@ -38,11 +38,10 @@ public class BrokenLinks {
 
         System.out.println(responseCode);
 
-
-//        List<WebElement> element = driver.findElements(By.cssSelector("a[href*='http']"));
-//        for (int i = 0; i < element.size(); i++) {
-//            System.out.println((element.get(i).getDomAttribute("href")));
-//        }
+        List<WebElement> element = driver.findElements(By.cssSelector("a[href*='http']"));
+        for (WebElement link : element) {
+            System.out.println(link.getDomAttribute("href"));
+        }
 
 
         Thread.sleep(2000);
