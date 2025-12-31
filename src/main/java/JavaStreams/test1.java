@@ -8,7 +8,6 @@ import java.util.List;
 
 public class test1 {
     // Count the number of Names starts with A
-
     //@Test
     public void regular() {
         List<String> names = new ArrayList<>();
@@ -23,7 +22,6 @@ public class test1 {
             String actual = names.get(i);
             if (actual.startsWith("A")) {
                 count++;
-
             }
         }
 
