@@ -3,6 +3,7 @@ package JavaStreams;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -13,9 +14,9 @@ public class test1 {
         List<String> names = new ArrayList<>();
         names.add("Abhijeet");
         names.add("Don");
-        names.add("Abnond");
+        names.add("Ananda");
         names.add("Adam");
-        names.add("Ram");
+        names.add("Rama");
         int count = 0;
         for (int i = 0; i < names.size(); i++) {
             String actual = names.get(i);
@@ -31,17 +32,17 @@ public class test1 {
         List<String> names = new ArrayList<>();
         names.add("Abhijeet");
         names.add("Don");
-        names.add("Abnond");
+        names.add("Ananda");
         names.add("Adam");
-        names.add("Ram");
+        names.add("Rama");
         Long c = names.stream().filter(s -> s.startsWith("A")).count();
         System.out.println(c);
         // There are no life of intermediate operation if there are no terminal operation
         //Terminal operation will execute only if intermediate operation(filter) will return true
         // We can create a Stream
         // How to use filter in Stream API
-        Stream.of("Abhijeet", "Don", "Abnond", "Adam", "Ram").filter(s -> s.startsWith("A")).forEach(System.out::println);
-        long d = Stream.of("Abhijeet", "Don", "Abnond", "Adam", "Ram").filter(s ->
+        Stream.of("Abhijeet", "Don", "Ananda", "Adam", "Rama").filter(s -> s.startsWith("A")).forEach(System.out::println);
+        long d = Stream.of("Abhijeet", "Don", "Ananda", "Adam", "Rama").filter(s ->
         {
             s.startsWith("D");
             return true;
@@ -58,4 +59,21 @@ public class test1 {
         names.stream().filter(s -> s.length() > 4).findFirst().ifPresent(System.out::println);
         names.stream().filter(s -> s.length() > 4).limit(1).forEach(System.out::println);
     }
+
+
+    @Test
+    public void streamMap() {
+        // Print the names which has last letter as 'a' with UpperCase
+        // We use Map to manipulate any data
+        Stream.of("Abhijeet", "Don", "Ananda", "Adam", "Rama").filter(s -> s.endsWith("a")).map(s -> s.toUpperCase()).forEach(System.out::println);
+        Stream.of("Abhijeet", "Don", "Ananda", "Adam", "Rama").filter(s -> s.endsWith("a")).map(String::toUpperCase).forEach(System.out::println);
+
+        System.out.println("============");
+        List<String> names = Arrays.asList("Azbhijeet", "Don", "Ananda", "Adam", "Rama");
+        // Print names starts with ''a' with UpperCase and in Sorted order
+        names.stream().filter(s -> s.startsWith("A")).sorted().map(s -> s.toUpperCase()).forEach(System.out::println);
+
+    }
+
+
 }
