@@ -82,6 +82,12 @@ public class test1 {
         // Print names starts with ''a' with UpperCase and in Sorted order
         names1.stream().filter(s -> s.startsWith("A")).sorted().map(s -> s.toUpperCase()).forEach(System.out::println);
         names1.stream().filter(s -> s.startsWith("A")).sorted().map(String::toUpperCase).forEach(System.out::println);
+        
+
+        // We can check if any WORD present inside any ArrayList as below
+        System.out.println("We can check if any WORD present inside any ArrayList as below");
+        System.out.println(names1.stream().anyMatch(s -> s.equalsIgnoreCase("Ananda")));
+
 
         System.out.println("Merging two ArrayList to one ArrayList");
         //Merging two ArrayList to one ArrayList
