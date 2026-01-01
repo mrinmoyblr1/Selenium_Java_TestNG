@@ -82,6 +82,7 @@ public class test1 {
         //Merging two ArrayList to one ArrayList
         Stream<String> newStream = Stream.concat(names1.stream(), names.stream());
         newStream.sorted().forEach(System.out::println);
+
         System.out.println("Second Approach: Merging two ArrayList to one ArrayList");
         Stream<String> newStream1 = Stream.concat(names1.stream(), names.stream());
         newStream1.sorted().forEach(s -> System.out.println(s));
