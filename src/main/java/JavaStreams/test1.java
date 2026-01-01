@@ -96,9 +96,5 @@ public class test1 {
         Stream<String> newStream2 = Stream.concat(names1.stream(), names.stream());
         boolean flag = newStream2.anyMatch(s -> s.equalsIgnoreCase("Don"));
         Assert.assertTrue(flag);
-
-
     }
-
-
 }
