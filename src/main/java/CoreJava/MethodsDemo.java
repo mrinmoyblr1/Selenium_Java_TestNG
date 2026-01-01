@@ -10,14 +10,12 @@ public class MethodsDemo {
         getData2();
     }
 
-
-    public String getData() {
+    public static String getData2() {
         System.out.println("Hello World");
         return "Mrinmoy Biswas";
     }
 
-
-    public static String getData2() {
+    public String getData() {
         System.out.println("Hello World");
         return "Mrinmoy Biswas";
     }

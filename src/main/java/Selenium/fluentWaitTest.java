@@ -1,12 +1,15 @@
 package Selenium;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.FluentWait;
+
 import java.time.Duration;
 import java.util.function.Function;
+
 public class fluentWaitTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new FirefoxDriver();

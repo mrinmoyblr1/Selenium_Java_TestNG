@@ -1,5 +1,6 @@
 package JavaStreams;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -63,15 +64,39 @@ public class test1 {
 
     @Test
     public void streamMap() {
+
+
+        List<String> names = new ArrayList<>();
+        names.add("man");
+        names.add("Don");
+        names.add("women");
+
+
         // Print the names which has last letter as 'a' with UpperCase
         // We use Map to manipulate any data
         Stream.of("Abhijeet", "Don", "Ananda", "Adam", "Rama").filter(s -> s.endsWith("a")).map(s -> s.toUpperCase()).forEach(System.out::println);
         Stream.of("Abhijeet", "Don", "Ananda", "Adam", "Rama").filter(s -> s.endsWith("a")).map(String::toUpperCase).forEach(System.out::println);
 
-        System.out.println("============");
-        List<String> names = Arrays.asList("Azbhijeet", "Don", "Ananda", "Adam", "Rama");
+
+        List<String> names1 = Arrays.asList("Azbhijeet", "Don", "Ananda", "Adam", "Rama");
         // Print names starts with ''a' with UpperCase and in Sorted order
-        names.stream().filter(s -> s.startsWith("A")).sorted().map(s -> s.toUpperCase()).forEach(System.out::println);
+        names1.stream().filter(s -> s.startsWith("A")).sorted().map(s -> s.toUpperCase()).forEach(System.out::println);
+        names1.stream().filter(s -> s.startsWith("A")).sorted().map(String::toUpperCase).forEach(System.out::println);
+
+        System.out.println("Merging two ArrayList to one ArrayList");
+        //Merging two ArrayList to one ArrayList
+        Stream<String> newStream = Stream.concat(names1.stream(), names.stream());
+        newStream.sorted().forEach(System.out::println);
+
+        System.out.println("Second Approach: Merging two ArrayList to one ArrayList");
+        Stream<String> newStream1 = Stream.concat(names1.stream(), names.stream());
+        newStream1.sorted().forEach(s -> System.out.println(s));
+
+
+        Stream<String> newStream2 = Stream.concat(names1.stream(), names.stream());
+        boolean flag = newStream2.anyMatch(s -> s.equalsIgnoreCase("Don"));
+        Assert.assertTrue(flag);
+
 
     }
 

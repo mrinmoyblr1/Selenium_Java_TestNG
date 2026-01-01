@@ -1,9 +1,5 @@
 package CoreJava;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class CoreJavaBrushUp3 {
     public static void main(String[] args) {
 

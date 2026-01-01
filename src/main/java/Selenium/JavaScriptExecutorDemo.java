@@ -1,12 +1,15 @@
 package Selenium;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+
 import java.time.Duration;
 import java.util.List;
+
 public class JavaScriptExecutorDemo {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");

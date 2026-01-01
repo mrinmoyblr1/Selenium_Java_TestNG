@@ -6,7 +6,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 public class Practice_Assignment_004 {
     public static void main(String[] args) throws InterruptedException {

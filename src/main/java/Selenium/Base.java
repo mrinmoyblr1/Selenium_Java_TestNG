@@ -1,14 +1,16 @@
 package Selenium;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 public class Base {
     public static void main(String[] args) throws InterruptedException {
 //        System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
@@ -36,6 +38,7 @@ public class Base {
         Thread.sleep(5000);
         driver.quit();
     }
+
     public void addItems(WebDriver driver, String[] itemsNeeded) {
         int j = 0;
         List itemNeededList = Arrays.asList(itemsNeeded);  // Converting Array to ArrayList

@@ -3,14 +3,11 @@ package Selenium;
 
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-
 import java.time.Duration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class SSLCheck {

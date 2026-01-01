@@ -1,10 +1,10 @@
 package Selenium;
-import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+
 public class Practice_Assignment_002 {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
