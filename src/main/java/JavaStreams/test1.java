@@ -87,6 +87,7 @@ public class test1 {
         newStream1.sorted().forEach(s -> System.out.println(s));
         Stream<String> newStream2 = Stream.concat(names1.stream(), names.stream());
         boolean flag = newStream2.anyMatch(s -> s.equalsIgnoreCase("Don"));
+        System.out.println(flag);
         Assert.assertTrue(flag);
     }
 }
