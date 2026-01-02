@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class test1 {
+public class test1Streams {
     // Count the number of Names starts with A
     @Test
     public void regular() {
