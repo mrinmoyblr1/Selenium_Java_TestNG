@@ -34,13 +34,9 @@ public class LiveDemo {
 
         // Compare original list vs sorted list
         Assert.assertEquals(sortedList, originalList);
-
-
-        
-
-
-
-
+        sortedList.forEach(System.out::println);
+        System.out.println("===============");
+        originalList.stream().forEach(System.out::println);
 
 
         Thread.sleep(2000);
