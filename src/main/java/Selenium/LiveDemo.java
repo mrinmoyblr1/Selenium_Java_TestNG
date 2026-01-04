@@ -35,11 +35,27 @@ public class LiveDemo {
         // Compare original list vs sorted list
         Assert.assertEquals(sortedList, originalList);
         sortedList.forEach(System.out::println);
-        System.out.println("===============");
+        System.out.println("==============================");
         originalList.stream().forEach(System.out::println);
+        System.out.println("==============================");
+
+        // Sacn the name column with "Beans" and print the price of the Beans
+        List<String> price = elementsList.stream()
+                .filter(s -> s.getText().contains("Beans"))
+                .map(s -> getPriceVeggie(s)).collect(Collectors.toList());
+        price.forEach(System.out::println);
 
 
         Thread.sleep(2000);
         driver.quit();
     }
+
+
+    private static String getPriceVeggie(WebElement s) {
+        String pricevalue = s.findElement(By.xpath("following-sibling::td[1]")).getText();
+
+        return pricevalue;
+    }
 }
+
+
