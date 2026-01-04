@@ -14,11 +14,15 @@ public class NewWindow {
         System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/angularpractice/");
+
+        // Open a new browser window
         driver.switchTo().newWindow(WindowType.WINDOW);
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> it = handles.iterator();
         String parentWindowId = it.next();
         String childWindowId = it.next();
+
+        // Navigate to a different URL in the new window
         driver.switchTo().window(childWindowId);
         driver.get("https://courses.rahulshettyacademy.com/l/products?sortKey=recommended&sortDirection=asc&page=1");
         Thread.sleep(3000);
@@ -36,7 +40,9 @@ public class NewWindow {
         File file1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file1, new File("./screenshots/logo1.png"));
 
-
+        // Get Height and Width of the WebElement
+        System.out.println(name.getRect().getDimension().getHeight());
+        System.out.println(name.getRect().getDimension().getWidth());
         Thread.sleep(2000);
         driver.quit();
     }
