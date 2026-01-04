@@ -16,20 +16,16 @@ public class Filters {
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 
         // Provide filter text in search box
-        driver.findElement(By.id("search-field")).sendKeys("Rice");
+        driver.findElement(By.id("search-field")).sendKeys("an");
+        List<WebElement> veggies = driver.findElements(By.xpath("//tbody//tr/td[1]"));
 
-        List<WebElement> veggies = driver.findElements(By.xpath("//tbody/tr/td[1]"));
-
+        // Here collect(Collectors.toList()) and toList() both are doing the same job
         List<WebElement> filteredList = veggies.stream()
-                .filter(veggie -> veggie.getText().contains("Rice"))
-                .collect(Collectors.toList());
-
-        Assert.assertEquals(filteredList, veggies);
-
+                .filter(veggie -> veggie.getText().contains("an")).toList();
+//        List<WebElement> filteredList = veggies.stream().filter(veggie -> veggie.getText().contains("an")).collect(Collectors.toList());
+        Assert.assertEquals(veggies.size(), filteredList.size());
 
         Thread.sleep(2000);
         driver.quit();
     }
-
-
 }
