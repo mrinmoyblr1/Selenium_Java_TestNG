@@ -17,8 +17,11 @@ public class LiveDemo {
         List<WebElement> elementsList = driver.findElements(By.xpath("//tr/td[1]"));
         // Capture the Text of each WebElement into another list
         // Below mentioned two lines do the same job
-        List<String> originalList = elementsList.stream().map(s -> s.getText()).collect(Collectors.toList());
-        List<String> originalList1 = elementsList.stream().map(WebElement::getText).toList();
+        List<String> originalList = elementsList.stream()
+                .map(s -> s.getText())
+                .collect(Collectors.toList());
+        List<String> originalList1 = elementsList.stream()
+                .map(WebElement::getText).toList();
         // Sort in the list -> Sorted List
         List<String> sortedList = originalList1.stream().sorted().toList();
         // Compare original list vs sorted list
