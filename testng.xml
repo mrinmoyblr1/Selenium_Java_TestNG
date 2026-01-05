@@ -3,15 +3,23 @@
 <suite name="Loan Department">
     <test name="Personal Loan">
         <classes>
-            <class name="TestNGTutorial.Day1"/>
-            <class name="TestNGTutorial.Day2"/>
-            <class name="TestNGTutorial.Day4"/>
+            <!--            <class name="TestNGTutorial.Day1"/>-->
+            <!--            <class name="TestNGTutorial.Day2"/>-->
+            <!--            <class name="TestNGTutorial.Day4"/>-->
         </classes>
     </test>
 
     <test name="Car Loan">
         <classes>
-            <class name="TestNGTutorial.Day3"/>
+            <class name="TestNGTutorial.Day3">
+                <methods>
+                    <include name="WebLoginCarLoan"/>
+                    <include name="MobileLoginCarLoan"/>
+                    <exclude name="APILoginCarLoan"/>
+                </methods>
+
+
+            </class>
         </classes>
     </test>
 </suite>
