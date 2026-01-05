@@ -8,7 +8,7 @@
                     <include name="Demo"/>
                 </methods>
             </class>
-            <!--            <class name="TestNGTutorial.Day2"/>-->
+            <class name="TestNGTutorial.Day2"/>
             <!--            <class name="TestNGTutorial.Day4"/>-->
         </classes>
     </test>
