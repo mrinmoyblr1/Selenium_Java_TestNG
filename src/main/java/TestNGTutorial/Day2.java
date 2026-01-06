@@ -29,15 +29,6 @@ public class Day2 {
         // in this class
         // Note: If there are multiple classes in the same test suite,
         // this method will run only once before all of them
-        // ensuring a clean setup for the tests
-        // This is particularly useful for integration tests
-        // where you might need to set up a test environment
-        // before running the tests
-        // It helps in maintaining test isolation and consistency
-        // across different test runs
-        // making the tests more reliable and easier to debug
-        // overall improving the quality of the test suite
-        // and the software being tested
     }
 
     @AfterTest
@@ -49,5 +40,4 @@ public class Day2 {
     public void afterMethod() {
         System.out.println("I will execute after every method in Day2 class");
     }
-
 }
