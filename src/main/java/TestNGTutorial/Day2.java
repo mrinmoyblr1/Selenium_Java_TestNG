@@ -19,6 +19,7 @@ public class Day2 {
         System.out.println("afterSuite....I am no 1. I will execute after everything in the suite");
     }
 
+
     @BeforeTest
     public void beforeTest() {
         System.out.println("beforeTest....I will execute before all tests within .....<test name=\"Personal Loan\">.....");
