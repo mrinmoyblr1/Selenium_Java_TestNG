@@ -26,7 +26,7 @@ public class Day3 {
     }
 
 
-    @Test
+    @Test(dependsOnMethods = {"WebLoginCarLoan", "MobileLoginCarLoan"})
     public void APICarLoan() {
         System.out.println("Hello World from LoginAPICarLoan");
     }
