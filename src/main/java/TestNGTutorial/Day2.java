@@ -3,7 +3,7 @@ package TestNGTutorial;
 import org.testng.annotations.*;
 
 public class Day2 {
-    @Test
+    @Test(groups = {"Smoke"})
     public void ploan() {
         System.out.println("good");
     }
@@ -57,6 +57,17 @@ public class Day2 {
     @AfterClass
     public void afterClass() {
         System.out.println("afterClass.....I will execute after all methods in Day2 class");
+    }
+
+
+    @BeforeGroups
+    public void beforeGroups() {
+        System.out.println("beforeGroups.....I will execute before all methods in Day2 class");
+    }
+
+    @AfterGroups
+    public void afterGroups() {
+        System.out.println("afterGroups.....I will execute after all methods in Day2 class");
     }
 
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department" verbose="1">
+    <test name="Personal Loan - Smoke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <exclude name="api"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNGTutorial.Day1"/>
+            <class name="TestNGTutorial.Day2"/>
+            <class name="TestNGTutorial.Day3"/>
+            <class name="TestNGTutorial.Day4"/>
+        </classes>
+    </test>
+
+</suite>

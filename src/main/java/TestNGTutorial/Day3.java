@@ -9,7 +9,7 @@ public class Day3 {
         System.out.println("Hello World from WebLoginCarLoan");
     }
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void MobileLoginCarLoan() {
         System.out.println("Hello World from MobileLoginCarLoan");
     }
