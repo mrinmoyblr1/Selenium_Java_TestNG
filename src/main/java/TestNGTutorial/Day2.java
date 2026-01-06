@@ -1,5 +1,7 @@
 package TestNGTutorial;
+
 import org.testng.annotations.*;
+
 public class Day2 {
     @Test
     public void ploan() {
@@ -10,10 +12,12 @@ public class Day2 {
     public void beforeSuite() {
         System.out.println("I am no 1. I will execute before everything in the suite");
     }
+
     @AfterSuite
     public void afterSuite() {
         System.out.println("I am no 1. I will execute after everything in the suite");
     }
+
     @BeforeTest
     public void beforeTest() {
         System.out.println("I will execute before all tests within .....<test name=\"Personal Loan\">.....");
@@ -35,6 +39,7 @@ public class Day2 {
         // overall improving the quality of the test suite
         // and the software being tested
     }
+
     @AfterTest
     public void afterTest() {
         System.out.println("I will execute after all tests within .....<test name=\"Personal Loan\">.....");
