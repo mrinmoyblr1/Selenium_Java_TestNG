@@ -14,7 +14,7 @@ public class Day4 {
         System.out.println("Hello World from MobileLoginHomeLoan");
     }
 
-    @Test
+    @Test(groups = {"Api"}, dependsOnGroups = {"Smoke"})
     public void LoginAPIHomeLoan() {
         System.out.println("Hello World from LoginAPIHomeLoan");
     }

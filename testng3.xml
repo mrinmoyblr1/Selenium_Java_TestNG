@@ -5,8 +5,15 @@
         <groups>
             <run>
                 <include name="Smoke"/>
-                <exclude name="api"/>
+                <exclude name="Api"/>
             </run>
+            <!--            <dependencies>-->
+            <!--                <group name="Regression">-->
+            <!--                    <depends-on>-->
+            <!--                        <group name="Smoke"/>-->
+            <!--                    </depends-on>-->
+            <!--                </group>-->
+            <!--            </dependencies>-->
         </groups>
         <classes>
             <class name="TestNGTutorial.Day1"/>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department" verbose="1">
+    <test name="Regression">
+        <groups>
+            <run>
+                <!--                <exclude name="Smoke"/>-->
+                <include name="Api"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNGTutorial.Day4"/>
+        </classes>
+    </test>
+</suite>
