@@ -1,7 +1,6 @@
 package TestNGTutorial;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class Day2 {
     @Test
@@ -9,9 +8,21 @@ public class Day2 {
         System.out.println("good");
     }
 
+
+    @BeforeSuite
+    public void beforeSuite() {
+        System.out.println("I am no 1. I will execute before everything in the suite");
+    }
+
+    @AfterSuite
+    public void afterSuite() {
+        System.out.println("I am no 1. I will execute after everything in the suite");
+    }
+
+
     @BeforeTest
     public void beforeTest() {
-        System.out.println("I will execute before all tests in Day2 class");
+        System.out.println("I will execute before all tests within .....<test name=\"Personal Loan\">.....");
         // We can write code here to set up preconditions for the tests
         // such as initializing variables, opening database connections, etc.
         // This method will run once before any test methods in this class are executed
@@ -29,7 +40,13 @@ public class Day2 {
         // making the tests more reliable and easier to debug
         // overall improving the quality of the test suite
         // and the software being tested
-
-
     }
+
+
+    @AfterMethod
+    public void afterMethod() {
+        System.out.println("I will execute after every method in Day2 class");
+    }
+
+
 }
