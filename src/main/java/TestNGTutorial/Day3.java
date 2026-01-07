@@ -30,10 +30,13 @@ public class Day3 {
         System.out.println("Hello World from MobileSignInCarLoan");
     }
 
-    // In the below test, timeOut is set to 4000 milliseconds, so if this test takes more than 4 seconds to execute, it will be marked as failed
-    @Test(timeOut = 4000)
-    public void MobileSignOutCarLoan() {
+
+    @Test(dataProvider = "data")
+    public void MobileSignOutCarLoan(String username, String password) {
         System.out.println("Hello World from MobileSignOutCarLoan");
+        System.out.println(username);
+        System.out.println(password);
+        
 
     }
 
