@@ -3,7 +3,6 @@ package TestNGTutorial;
 import org.testng.annotations.Test;
 
 public class Day3 {
-
     @Test
     public void WebLoginCarLoan() {
         System.out.println("Hello World from WebLoginCarLoan");
@@ -32,14 +31,10 @@ public class Day3 {
         System.out.println("Hello World from MobileSignOutCarLoan");
     }
 
-
     // Here @Test is dependent on the successful execution of WebLoginCarLoan method
     // If WebLoginCarLoan fails or is skipped, then APICarLoan will be skipped
     @Test(dependsOnMethods = {"WebLoginCarLoan"})
     public void APICarLoan() {
         System.out.println("Hello World from LoginAPICarLoan");
     }
-
-
 }
-
