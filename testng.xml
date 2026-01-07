@@ -3,6 +3,8 @@
 <suite name="Loan Department">
     <test name="Personal Loan">
         <parameter name="URL" value="https://rahulshettyacademy.com/practice"/>
+        <parameter name="APIKEY" value="123456"/>
+        <parameter name="username" value="654321"/>
         <classes>
             <class name="TestNGTutorial.Day1">
                 <methods>

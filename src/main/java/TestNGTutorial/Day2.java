@@ -3,12 +3,14 @@ package TestNGTutorial;
 import org.testng.annotations.*;
 
 public class Day2 {
-    @Parameters("URL")
+    @Parameters({"URL", "APIKEY", "username"})
     @Test(groups = {"Smoke"})
-    public void ploan(String url) {
+    public void ploan(String url, String apikey, String username) {
 
         System.out.println("good");
         System.out.println(url);
+        System.out.println(apikey);
+        System.out.println(username);
     }
 
     @BeforeSuite
