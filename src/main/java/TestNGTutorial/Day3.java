@@ -41,11 +41,14 @@ public class Day3 {
     @Test(dependsOnMethods = {"WebLoginCarLoan"})
     public void APICarLoan() {
         System.out.println("Hello World from LoginAPICarLoan");
+
     }
 
     //Parameterization in TestNG
     // In case of Parameterization, we can pass the values from testng.xml file
     // Username, Password, API keys, etc. all kinds of common values we can pass from testng.xml file
+
+
     @DataProvider(name = "data")
     public Object[][] getData() {
         // 1st combination: Username and Password - good credit history
