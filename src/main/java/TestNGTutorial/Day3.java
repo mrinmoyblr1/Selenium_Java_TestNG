@@ -1,5 +1,6 @@
 package TestNGTutorial;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -33,6 +34,7 @@ public class Day3 {
     @Test(timeOut = 4000)
     public void MobileSignOutCarLoan() {
         System.out.println("Hello World from MobileSignOutCarLoan");
+
     }
 
     // Here @Test is dependent on the successful execution of WebLoginCarLoan method
@@ -45,6 +47,30 @@ public class Day3 {
     //Parameterization in TestNG
     // In case of Parameterization, we can pass the values from testng.xml file
     // Username, Password, API keys, etc. all kinds of common values we can pass from testng.xml file
+
+
+    @DataProvider(name = "data")
+    public Object[][] getData() {
+        // 1st combination: Username and Password - good credit history
+        // 2nd combination: Username and Password - no credit history
+        // 3rd combination: Username and Password - fraudulent credit history
+
+        Object[][] data = new Object[3][2];
+        // 1st set
+        data[0][0] = "username1";
+        data[0][1] = "password1";
+        // 2nd set
+        data[1][0] = "username2";
+        data[1][1] = "password2";
+        // 3rd set
+        data[2][0] = "username3";
+        data[2][1] = "password3";
+        System.out.println(data.length);
+        return data;
+
+
+//        return new Object[][]{{"https://www.google.com"}};
+    }
 
 
 }
