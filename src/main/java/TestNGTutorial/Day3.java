@@ -9,6 +9,10 @@ public class Day3 {
         System.out.println("Hello World from WebLoginCarLoan");
     }
 
+    // Here in below @Test is tagged with groups attribute
+    // This means that this test belongs to the "Smoke" group
+    // We can run this specific group of tests using TestNG XML suite configuration
+    // Or using command line using -groups option
     @Test(groups = {"Smoke"})
     public void MobileLoginCarLoan() {
         System.out.println("Hello World from MobileLoginCarLoan");
@@ -22,8 +26,8 @@ public class Day3 {
         System.out.println("Hello World from MobileSignInCarLoan");
     }
 
-
-    @Test
+    // In the below test, timeOut is set to 4000 milliseconds, so if this test takes more than 4 seconds to execute, it will be marked as failed
+    @Test(timeOut = 4000)
     public void MobileSignOutCarLoan() {
         System.out.println("Hello World from MobileSignOutCarLoan");
     }
