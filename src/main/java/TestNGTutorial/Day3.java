@@ -36,8 +36,6 @@ public class Day3 {
         System.out.println("Hello World from MobileSignOutCarLoan");
         System.out.println(username);
         System.out.println(password);
-
-
     }
 
     // Here @Test is dependent on the successful execution of WebLoginCarLoan method
