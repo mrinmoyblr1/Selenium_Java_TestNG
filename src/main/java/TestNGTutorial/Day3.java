@@ -5,7 +5,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Day3 {
-
     @Parameters({"URL"})
     @Test
     public void WebLoginCarLoan(String urlName) {
@@ -30,7 +29,6 @@ public class Day3 {
         System.out.println("Hello World from MobileSignInCarLoan");
     }
 
-
     @Test(dataProvider = "data")
     public void MobileSignOutCarLoan(String username, String password) {
         System.out.println("Hello World from MobileSignOutCarLoan");
@@ -48,14 +46,11 @@ public class Day3 {
     //Parameterization in TestNG
     // In case of Parameterization, we can pass the values from testng.xml file
     // Username, Password, API keys, etc. all kinds of common values we can pass from testng.xml file
-
-
     @DataProvider(name = "data")
     public Object[][] getData() {
         // 1st combination: Username and Password - good credit history
         // 2nd combination: Username and Password - no credit history
         // 3rd combination: Username and Password - fraudulent credit history
-
         Object[][] data = new Object[3][2];
         // 1st set
         data[0][0] = "username1";
@@ -68,10 +63,6 @@ public class Day3 {
         data[2][1] = "password3";
         System.out.println(data.length);
         return data;
-
-
 //        return new Object[][]{{"https://www.google.com"}};
     }
-
-
 }
