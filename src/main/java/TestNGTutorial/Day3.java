@@ -1,11 +1,15 @@
 package TestNGTutorial;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Day3 {
+
+    @Parameters({"URL"})
     @Test
-    public void WebLoginCarLoan() {
+    public void WebLoginCarLoan(String urlName) {
         System.out.println("Hello World from WebLoginCarLoan");
+        System.out.println(urlName);
     }
 
     // Here in below @Test is tagged with groups attribute
@@ -37,4 +41,10 @@ public class Day3 {
     public void APICarLoan() {
         System.out.println("Hello World from LoginAPICarLoan");
     }
+
+    //Parameterization in TestNG
+    // In case of Parameterization, we can pass the values from testng.xml file
+    // Username, Password, API keys, etc. all kinds of common values we can pass from testng.xml file
+
+
 }

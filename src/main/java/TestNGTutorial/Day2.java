@@ -3,9 +3,12 @@ package TestNGTutorial;
 import org.testng.annotations.*;
 
 public class Day2 {
+    @Parameters("URL")
     @Test(groups = {"Smoke"})
-    public void ploan() {
+    public void ploan(String url) {
+
         System.out.println("good");
+        System.out.println(url);
     }
 
     @BeforeSuite

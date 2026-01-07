@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Loan Department">
     <test name="Personal Loan">
+        <parameter name="URL" value="https://rahulshettyacademy.com/practice"/>
         <classes>
             <class name="TestNGTutorial.Day1">
                 <methods>
@@ -9,15 +10,14 @@
                 </methods>
             </class>
             <class name="TestNGTutorial.Day2"/>
-            <!--            <class name="TestNGTutorial.Day4"/>-->
         </classes>
     </test>
 
     <test name="Car Loan">
+        <parameter name="URL" value="https://carLoan.com"/>
         <classes>
             <class name="TestNGTutorial.Day3">
                 <methods>
-                    <!--                    <include name="WebLoginCarLoan"/>-->
                     <exclude name="Api.*"/>
                     <!--                    <include name="LoginAPICarLoan"/>-->
                 </methods>
