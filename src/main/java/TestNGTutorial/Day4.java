@@ -16,7 +16,7 @@ public class Day4 {
 
     @Test(groups = {"Api"}, dependsOnGroups = {"Smoke"})
     public void LoginAPIHomeLoan() {
-        System.out.println("Hello World from LoginAPIHomeLoan");
+        System.out.println("Hello World from: LoginAPIHomeLoan");
     }
 
 
