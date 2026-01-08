@@ -1,22 +1,26 @@
 package biswasacademy;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
 
 public class StandAlone {
     public static void main(String[] args) {
 
-        WebDriverManager.chroemeDriver().setup();
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        driver.get("https://rahulshettyacademy.com/client/#/auth/login");
+        System.out.println(driver.getTitle());
 
 
 
 
 
-//        System.out.println("This is a standalone Java class.");
-//        System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
-//        WebDriver driver = new ChromeDriver();
-
-
+        driver.quit();
     }
 
 
