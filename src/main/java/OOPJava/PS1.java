@@ -6,8 +6,14 @@ public class PS1 extends PS {
 
     @Test
     public void testRun() {
+        int a = 3;
         doThis();
-        System.out.println("I'm from child class");
+        PS2 ps2 = new PS2();
+        System.out.println(ps2.increment(a));
+        System.out.println(ps2.decrement(a));
+
+
     }
+
 
 }
