@@ -13,6 +13,7 @@ import java.util.List;
 
 public class StandAlone {
     public static void main(String[] args) throws InterruptedException {
+        String productName = "ADIDAS ORIGINAL";
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -28,7 +29,7 @@ public class StandAlone {
         List<WebElement> products = driver.findElements(By.className("card-body"));
 
         WebElement prod = products.stream().filter(product -> product.findElement(By.cssSelector("b"))
-                .getText().equalsIgnoreCase("ADIDAS ORIGINAL")).findFirst().orElse(null);
+                .getText().equalsIgnoreCase(productName)).findFirst().orElse(null);
         //prod.findElement(By.cssSelector(".card-body button:first-of-type")).click(); // Here :first-of-type is used to select the first button (Add to Wishlist)
         prod.findElement(By.cssSelector(".card-body button:last-of-type")).click(); // Here :last-of-type is used to select the last button (Add to Cart)
 
