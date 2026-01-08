@@ -8,6 +8,7 @@ public class PS {
 
     @Test
     public void doThis() {
+        int a = 100;
         System.out.println("I'm here from parent class");
     }
 
@@ -20,6 +21,4 @@ public class PS {
     public void afterRun() {
         System.out.println("Run me last");
     }
-
-
 }
