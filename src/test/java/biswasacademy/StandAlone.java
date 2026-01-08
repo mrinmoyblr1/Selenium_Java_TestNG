@@ -39,7 +39,8 @@ public class StandAlone {
         System.out.println(driver.findElement(By.cssSelector("#toast-container")).getText());
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[routerlink*='cart']")));
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 
 
