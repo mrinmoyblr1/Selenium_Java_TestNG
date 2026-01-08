@@ -1,7 +1,14 @@
 package OOPJava;
 
+import org.testng.annotations.Test;
+
 public class PS1 extends PS {
-    public static void main(String[] args) {
-        System.out.println("PS1");
+
+
+    @Test
+    public void testRun() {
+        doThis();
+        System.out.println("I'm from child class");
     }
+
 }
