@@ -12,7 +12,7 @@ public class ProductCatalogue extends AbstractComponent {
     WebDriver driver;
 
     public ProductCatalogue(WebDriver driver) {
-        super();
+
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

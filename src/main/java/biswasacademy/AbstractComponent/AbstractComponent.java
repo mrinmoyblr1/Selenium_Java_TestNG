@@ -16,12 +16,12 @@ public class AbstractComponent {
     }
 
 
-
     // This one we created for reusable components
 
     public void waitForElementToAppear(By findBy) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("card-body")));
+
     }
 
 
