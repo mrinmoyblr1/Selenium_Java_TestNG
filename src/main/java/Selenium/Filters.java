@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Filters {
     public static void main(String[] args) throws InterruptedException {
