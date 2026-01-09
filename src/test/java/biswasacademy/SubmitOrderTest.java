@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
@@ -28,36 +27,18 @@ public class SubmitOrderTest {
         landingPage.goTo();
         landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
 
-
+        //=======================================================
         ProductCatalogue productCatalogue = new ProductCatalogue(driver);
+        List<WebElement> products = productCatalogue.getProductList();
+        //=======================================================
+
+        productCatalogue.addProductToCart(productName);
 
 
-
-
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("card-body")));
-
-        List<WebElement> products = driver.findElements(By.className("card-body"));
-
-        WebElement prod = products.stream().
-                filter(product -> product.findElement(By.cssSelector("b"))
-                        .getText().equalsIgnoreCase(productName)).findFirst().orElse(null);
-        //prod.findElement(By.cssSelector(".card-body button:first-of-type")).click(); // Here :first-of-type is used to select the first button (Add to Wishlist)
-
-        prod.findElement(By.cssSelector(".card-body button:last-of-type")).click(); // Here :last-of-type is used to select the last button (Add to Cart)
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
-        // Below is another way of writing the same wait condition using Lambda function
-        wait.until(driver1 -> driver1.findElement(By.cssSelector("#toast-container")).isDisplayed());
-        System.out.println(driver.findElement(By.cssSelector("#toast-container")).getText());
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
-
-
-
-
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[routerlink*='cart']")));
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
+
+
+
         List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
         boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
         System.out.println(match);
