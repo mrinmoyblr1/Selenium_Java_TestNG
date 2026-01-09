@@ -50,7 +50,9 @@ public class StandAlone {
         a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "India").build().perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
         driver.findElement(By.cssSelector(".ta-item:nth-of-type(2)")).click();
+        // This is a very important cssSelector
         //    .ta-item:nth-of-type(2)
+        // Below is a alternative xPath selector
         //    //button[contains(@class,'ta-item')][2]
         driver.findElement(By.cssSelector(".action__submit")).click();
         String confirmation = driver.findElement(By.cssSelector(".hero-primary")).getText();
