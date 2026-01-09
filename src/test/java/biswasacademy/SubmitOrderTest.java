@@ -1,5 +1,6 @@
 package biswasacademy;
 
+import biswasacademy.pageObjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,30 +14,30 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.List;
 
-public class StandAlone {
+public class SubmitOrderTest {
     public static void main(String[] args) throws InterruptedException {
         String productName = "ZARA COAT 3";
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.get("https://rahulshettyacademy.com/client/#/auth/login");
-        System.out.println(driver.getTitle());
 
 
-        driver.findElement(By.id("userEmail")).sendKeys("mrinmoy.blr@gmail.com");
-        driver.findElement(By.id("userPassword")).sendKeys("Anjali@12");
-        driver.findElement(By.id("login")).click();
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.goTo();
+        landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
+
+
 
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("card-body")));
         List<WebElement> products = driver.findElements(By.className("card-body"));
+
         WebElement prod = products.stream().
                 filter(product -> product.findElement(By.cssSelector("b"))
                         .getText().equalsIgnoreCase(productName)).findFirst().orElse(null);
         //prod.findElement(By.cssSelector(".card-body button:first-of-type")).click(); // Here :first-of-type is used to select the first button (Add to Wishlist)
-
 
         prod.findElement(By.cssSelector(".card-body button:last-of-type")).click(); // Here :last-of-type is used to select the last button (Add to Cart)
         // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
@@ -44,6 +45,9 @@ public class StandAlone {
         wait.until(driver1 -> driver1.findElement(By.cssSelector("#toast-container")).isDisplayed());
         System.out.println(driver.findElement(By.cssSelector("#toast-container")).getText());
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
+
+
+
 
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[routerlink*='cart']")));
