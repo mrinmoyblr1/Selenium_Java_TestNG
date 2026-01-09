@@ -13,7 +13,7 @@ import java.util.List;
 
 public class StandAlone {
     public static void main(String[] args) throws InterruptedException {
-        String productName = "ADIDAS ORIGINAL";
+        String productName = "ZARA COAT 3";
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -44,6 +44,13 @@ public class StandAlone {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[routerlink*='cart']")));
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 
+
+        List<WebElement> allProductsUnderCart = driver.findElements(By.cssSelector(".cartSection h3"));
+        System.out.println(allProductsUnderCart.size());
+        System.out.println(allProductsUnderCart.get(0).getText());
+
+        System.out.println(allProductsUnderCart.stream().anyMatch(product -> product.getText().contains(productName)));
+        //allProductsUnderCart.stream().forEach(product -> product.getText().contains(productName));
 
         Thread.sleep(2000);
         driver.quit();
