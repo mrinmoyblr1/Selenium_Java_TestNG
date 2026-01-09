@@ -1,6 +1,7 @@
 package biswasacademy;
 
 import biswasacademy.pageObjects.LandingPage;
+import biswasacademy.pageObjects.ProductCatalogue;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,10 +29,15 @@ public class SubmitOrderTest {
         landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
 
 
+        ProductCatalogue productCatalogue = new ProductCatalogue(driver);
+
+
+
 
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("card-body")));
+
         List<WebElement> products = driver.findElements(By.className("card-body"));
 
         WebElement prod = products.stream().
