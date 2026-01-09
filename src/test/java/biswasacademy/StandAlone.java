@@ -26,37 +26,26 @@ public class StandAlone {
         driver.findElement(By.id("userPassword")).sendKeys("Anjali@12");
         driver.findElement(By.id("login")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("card-body")));
         List<WebElement> products = driver.findElements(By.className("card-body"));
-
         WebElement prod = products.stream().
                 filter(product -> product.findElement(By.cssSelector("b"))
                         .getText().equalsIgnoreCase(productName)).findFirst().orElse(null);
         //prod.findElement(By.cssSelector(".card-body button:first-of-type")).click(); // Here :first-of-type is used to select the first button (Add to Wishlist)
         prod.findElement(By.cssSelector(".card-body button:last-of-type")).click(); // Here :last-of-type is used to select the last button (Add to Cart)
-
-
         // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
         // Below is another way of writing the same wait condition using Lambda function
         wait.until(driver1 -> driver1.findElement(By.cssSelector("#toast-container")).isDisplayed());
         System.out.println(driver.findElement(By.cssSelector("#toast-container")).getText());
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
-
         Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[routerlink*='cart']")));
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
-
-
         List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
         boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
         System.out.println(match);
         Assert.assertTrue(match);
-
         driver.findElement(By.cssSelector("li[class='totalRow'] button[type='button']")).click();
-
-
         Actions a = new Actions(driver);
         a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "India").build().perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
@@ -64,12 +53,9 @@ public class StandAlone {
         //    .ta-item:nth-of-type(2)
         //    //button[contains(@class,'ta-item')][2]
         driver.findElement(By.cssSelector(".action__submit")).click();
-
         String confirmation = driver.findElement(By.cssSelector(".hero-primary")).getText();
         System.out.println(confirmation);
         Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
-
-
         Thread.sleep(2000);
         driver.quit();
     }
