@@ -31,8 +31,10 @@ public class SubmitOrderTest {
         ProductCatalogue productCatalogue = new ProductCatalogue(driver);
         List<WebElement> products = productCatalogue.getProductList();
         //=======================================================
-
         productCatalogue.addProductToCart(productName);
+
+
+
 
 
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
@@ -48,7 +50,9 @@ public class SubmitOrderTest {
         driver.findElement(By.cssSelector("li[class='totalRow'] button[type='button']")).click();
         Actions a = new Actions(driver);
         a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "India").build().perform();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
+
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
+
         driver.findElement(By.cssSelector(".ta-item:nth-of-type(2)")).click();
         // This is a very important cssSelector
         //    .ta-item:nth-of-type(2)
