@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import java.time.Duration;
@@ -32,13 +31,11 @@ public class SubmitOrderTest {
         List<WebElement> products = productCatalogue.getProductList();
         //=======================================================
         productCatalogue.addProductToCart(productName);
+        //=======================================================
 
-
-
-
+        Thread.sleep(2000);
 
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
-
 
 
         List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
