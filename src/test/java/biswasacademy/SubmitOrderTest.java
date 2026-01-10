@@ -1,5 +1,6 @@
 package biswasacademy;
 
+import biswasacademy.pageObjects.CartPage;
 import biswasacademy.pageObjects.LandingPage;
 import biswasacademy.pageObjects.ProductCatalogue;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -32,19 +33,19 @@ public class SubmitOrderTest {
         //=======================================================
         productCatalogue.addProductToCart(productName);
         //=======================================================
+        productCatalogue.goToCartPage();
 
-        Thread.sleep(2000);
-
-        driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
-
-
-        List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
-        boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
-        System.out.println(match);
+        //=======================================================
+        CartPage cartPage = new CartPage(driver);
+        boolean match = cartPage.verifyProductDisplaying(productName);
         Assert.assertTrue(match);
+        //=======================================================
+        cartPage.clickCheckOutButton();
 
 
-        driver.findElement(By.cssSelector("li[class='totalRow'] button[type='button']")).click();
+
+
+
         Actions a = new Actions(driver);
         a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "India").build().perform();
 
