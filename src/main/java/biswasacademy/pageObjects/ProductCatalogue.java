@@ -25,6 +25,8 @@ public class ProductCatalogue extends AbstractComponent {
     By productsBy = By.className("card-body");
     By addToCartBy = By.cssSelector(".card-body button:last-of-type");
     By toastMessage = By.cssSelector("#toast-container");
+    By getProductNameLocator = By.cssSelector("b");
+
 
     //    By ng-animating- By.cssSelector(".ng-animating");
     //Action methods
@@ -35,7 +37,7 @@ public class ProductCatalogue extends AbstractComponent {
 
     public WebElement getProductByName(String productName) {
         WebElement prod = getProductList().stream().
-                filter(product -> product.findElement(By.cssSelector("b"))
+                filter(product -> product.findElement(getProductNameLocator)
                         .getText().equalsIgnoreCase(productName)).findFirst().orElse(null);
         return prod;
     }

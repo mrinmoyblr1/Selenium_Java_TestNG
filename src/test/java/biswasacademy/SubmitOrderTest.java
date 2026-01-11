@@ -3,12 +3,10 @@ package biswasacademy;
 import biswasacademy.pageObjects.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.List;
 
 public class SubmitOrderTest {
     public static void main(String[] args) throws InterruptedException {
@@ -23,12 +21,10 @@ public class SubmitOrderTest {
         landingPage.goTo();
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
 
-        //List<WebElement> products = productCatalogue.getProductList();
 
         productCatalogue.addProductToCart(productName);
 
 
-        //Thread.sleep(4000);
         CartPage cartPage = productCatalogue.goToCartPage();
 
 

@@ -23,10 +23,12 @@ public class AbstractComponent {
     WebElement cartHeader;
 
     // Action methods
-    public CartPage goToCartPage() {
+    public CartPage goToCartPage() throws InterruptedException {
+        Thread.sleep(4000);
         cartHeader.click();
         return new CartPage(driver);
     }
+
 
     // This one we created for reusable components
     public void waitForElementToAppear(By findBy) {
