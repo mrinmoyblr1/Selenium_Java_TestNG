@@ -37,7 +37,8 @@ public class BaseTest {
 
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
+    // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public LandingPage launchApplication() throws IOException {
         driver = initializeDriver();
         landingPage = new LandingPage(driver);
@@ -45,7 +46,8 @@ public class BaseTest {
         return landingPage;
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
+    // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public void tearDown() {
         driver.close();
     }

@@ -10,18 +10,16 @@ import java.util.List;
 
 public class CartPage extends AbstractComponent {
     WebDriver driver;
-
-    public CartPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
     // PageFactory design pattern
     @FindBy(css = ".cartSection h3")
     List<WebElement> cartProducts;
     @FindBy(css = "li[class='totalRow'] button[type='button']")
     WebElement checkOutEle;
+    public CartPage(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     // Below is the method to perform login action
     public boolean verifyProductDisplaying(String productName) {

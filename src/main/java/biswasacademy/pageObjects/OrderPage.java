@@ -10,21 +10,17 @@ import java.util.List;
 
 public class OrderPage extends AbstractComponent {
     WebDriver driver;
+    // PageFactory design pattern
+    @FindBy(css = "li[class='totalRow'] button[type='button']")
+    WebElement checkOutEle;
+    @FindBy(css = "tr td:nth-child(3)")
+    private List<WebElement> productNames;
 
     public OrderPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-    // PageFactory design pattern
-    @FindBy(css = "li[class='totalRow'] button[type='button']")
-    WebElement checkOutEle;
-
-    @FindBy(css = "tr td:nth-child(3)")
-    private List<WebElement> productNames;
-
-
 
     // Below is the method to perform login action
     public boolean verifyOrderDisplaying(String productName) {

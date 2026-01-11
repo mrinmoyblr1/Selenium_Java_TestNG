@@ -8,14 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LandingPage extends AbstractComponent {
     WebDriver driver;
-
-    // Constructor
-    public LandingPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
     // PageFactory design pattern
     @FindBy(id = "userEmail")
     WebElement userEmail;
@@ -23,9 +15,15 @@ public class LandingPage extends AbstractComponent {
     WebElement passwordEle;
     @FindBy(id = "login")
     WebElement submit;
-
     @FindBy(css = "[class*='flyInOut']")
     WebElement errorMessage;
+
+    // Constructor
+    public LandingPage(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     public String getErrorMessage() {
         waitForWebElementToAppear(errorMessage);

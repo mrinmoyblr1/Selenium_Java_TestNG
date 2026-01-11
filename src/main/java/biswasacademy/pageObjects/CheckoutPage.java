@@ -10,13 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CheckoutPage extends AbstractComponent {
     WebDriver driver;
-
-    public CheckoutPage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
     // PageFactory design pattern
     @FindBy(css = ".action__submit")
     WebElement submit;
@@ -25,6 +18,11 @@ public class CheckoutPage extends AbstractComponent {
     @FindBy(css = ".ta-item:nth-of-type(2)")
     WebElement selectCountry;
     By results = By.cssSelector(".ta-results");
+    public CheckoutPage(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     // Below is the method to perform login action
     public void selectCountry(String countryName) {

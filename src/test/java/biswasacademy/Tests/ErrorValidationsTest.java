@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class ErrorValidationsTest extends BaseTest {
-    @Test
-    public void loginErrorValidation() {
+    @Test(groups = {"ErrorHandling"})
+    public void LoginErrorValidation() {
         System.out.println("loginErrorValidation");
 
         landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@1212");
@@ -20,7 +20,7 @@ public class ErrorValidationsTest extends BaseTest {
 
 
     @Test
-    public void productErrorValidation() throws IOException, InterruptedException {
+    public void ProductErrorValidation() throws IOException, InterruptedException {
         System.out.println("productErrorValidation");
         String productName = "ZARA COAT 3";
 

@@ -11,13 +11,6 @@ import java.util.List;
 
 public class ProductCatalogue extends AbstractComponent {
     WebDriver driver;
-
-    public ProductCatalogue(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
     @FindBy(className = "card-body")
     List<WebElement> products;
     @FindBy(css = ".ng-animating")
@@ -26,7 +19,11 @@ public class ProductCatalogue extends AbstractComponent {
     By addToCartBy = By.cssSelector(".card-body button:last-of-type");
     By toastMessage = By.cssSelector("#toast-container");
     By getProductNameLocator = By.cssSelector("b");
-
+    public ProductCatalogue(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     //    By ng-animating- By.cssSelector(".ng-animating");
     //Action methods

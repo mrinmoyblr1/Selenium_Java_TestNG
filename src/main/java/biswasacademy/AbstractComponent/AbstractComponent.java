@@ -14,18 +14,15 @@ import java.time.Duration;
 
 public class AbstractComponent {
     WebDriver driver;
+    @FindBy(css = "[routerlink*='cart']")
+    WebElement cartHeader;
+    @FindBy(css = "[routerlink*='myorders']")
+    WebElement orderHeader;
 
     public AbstractComponent(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(css = "[routerlink*='cart']")
-    WebElement cartHeader;
-
-    @FindBy(css = "[routerlink*='myorders']")
-    WebElement orderHeader;
-
 
     // Action methods
     public CartPage goToCartPage() throws InterruptedException {
@@ -42,9 +39,6 @@ public class AbstractComponent {
         OrderPage orderPage = new OrderPage(driver);
         return orderPage;
     }
-
-
-
 
 
     // This one we created for reusable components
