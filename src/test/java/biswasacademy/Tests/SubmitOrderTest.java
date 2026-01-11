@@ -3,6 +3,7 @@ package biswasacademy.Tests;
 import biswasacademy.TestComponents.BaseTest;
 import biswasacademy.pageObjects.*;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -41,8 +42,11 @@ public class SubmitOrderTest extends BaseTest {
         OrderPage orderPage = productCatalogue.goToOrdersPage();
         Assert.assertTrue(orderPage.verifyOrderDisplaying(productName));
         Thread.sleep(3000);
+    }
 
-
+    @DataProvider
+    public Object[][] getData() {
+        return new Object[][]{{"mrinmoy.blr@gmail.com", "Anjali@12"}, {"mrinmoy.blr2@gmail.com", "Anjali@12"}};
     }
 
 }
