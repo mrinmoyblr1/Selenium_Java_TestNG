@@ -1,20 +1,18 @@
 package biswasacademy.Tests;
 
 import biswasacademy.TestComponents.BaseTest;
-import biswasacademy.pageObjects.CartPage;
-import biswasacademy.pageObjects.CheckoutPage;
-import biswasacademy.pageObjects.ConfirmationPage;
-import biswasacademy.pageObjects.ProductCatalogue;
-import org.openqa.selenium.By;
+import biswasacademy.pageObjects.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 public class SubmitOrderTest extends BaseTest {
+    String productName = "ZARA COAT 3";
+
     @Test
     public void submitOrder() throws IOException, InterruptedException {
-        String productName = "ZARA COAT 3";
+
 
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
         productCatalogue.addProductToCart(productName);
@@ -36,14 +34,11 @@ public class SubmitOrderTest extends BaseTest {
     // To verify ZARA COAT 3 is displaying in the order summary page
 
     @Test(dependsOnMethods = {"submitOrder"})
-    public void OrderHistoryTest(){
+    public void OrderHistoryTest() throws InterruptedException {
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
-        driver.findElement(By.cssSelector("[routerlink*='myorders']")).click();
-
-
-
-
-
+        OrderPage orderPage = productCatalogue.goToOrdersPage();
+        Assert.assertTrue(orderPage.verifyOrderDisplaying(productName));
+        Thread.sleep(3000);
 
 
     }

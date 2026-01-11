@@ -21,14 +21,14 @@ public class OrderPage extends AbstractComponent {
     @FindBy(css = "li[class='totalRow'] button[type='button']")
     WebElement checkOutEle;
 
-    @FindBy(css = ".cartSection h3")
-    List<WebElement> cartProducts;
+    @FindBy(css = "tr td:nth-child(3)")
+    private List<WebElement> productNames;
 
 
 
     // Below is the method to perform login action
     public boolean verifyOrderDisplaying(String productName) {
-        return cartProducts.stream().anyMatch(product -> product.getText().equalsIgnoreCase(productName));
+        return productNames.stream().anyMatch(product -> product.getText().equalsIgnoreCase(productName));
     }
 
     public CheckoutPage goToCheckOut() {
