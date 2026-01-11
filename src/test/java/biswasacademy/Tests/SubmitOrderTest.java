@@ -1,4 +1,4 @@
-package biswasacademy;
+package biswasacademy.Tests;
 
 import biswasacademy.pageObjects.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -13,7 +13,7 @@ public class SubmitOrderTest {
         String productName = "ZARA COAT 3";
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 
