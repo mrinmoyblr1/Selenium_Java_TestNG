@@ -15,7 +15,7 @@ public class SubmitOrderTest {
         String productName = "ZARA COAT 3";
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 
@@ -23,21 +23,18 @@ public class SubmitOrderTest {
         landingPage.goTo();
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
 
-        //=======================================================
-
         List<WebElement> products = productCatalogue.getProductList();
-        //=======================================================
+
         productCatalogue.addProductToCart(productName);
-        //=======================================================
+
+        Thread.sleep(4000);
         CartPage cartPage = productCatalogue.goToCartPage();
 
-        //=======================================================
 
         boolean match = cartPage.verifyProductDisplaying(productName);
         Assert.assertTrue(match);
-        //=======================================================
+
         CheckoutPage checkoutPage = cartPage.goToCheckOut();
-        //=======================================================
 
 
         checkoutPage.selectCountry("United States");
