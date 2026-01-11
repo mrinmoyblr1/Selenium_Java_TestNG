@@ -19,13 +19,10 @@ public class LandingPage extends AbstractComponent {
     // PageFactory design pattern
     @FindBy(id = "userEmail")
     WebElement userEmail;
-
     @FindBy(id = "userPassword")
     WebElement passwordEle;
-
     @FindBy(id = "login")
     WebElement submit;
-
 
     public void goTo() {
         driver.get("https://rahulshettyacademy.com/client/#/auth/login");
@@ -38,9 +35,5 @@ public class LandingPage extends AbstractComponent {
         submit.click();
         ProductCatalogue productCatalogue = new ProductCatalogue(driver);
         return productCatalogue;
-
-
     }
-
-
 }

@@ -19,7 +19,6 @@ public class AbstractComponent {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(css = "[routerlink*='cart']")
     WebElement cartHeader;
 
@@ -29,21 +28,14 @@ public class AbstractComponent {
         return new CartPage(driver);
     }
 
-
     // This one we created for reusable components
-
     public void waitForElementToAppear(By findBy) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
     }
 
-
     public void waitForElementToDisappear(WebElement ele) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.invisibilityOf(ele));
-
-
     }
-
-
 }

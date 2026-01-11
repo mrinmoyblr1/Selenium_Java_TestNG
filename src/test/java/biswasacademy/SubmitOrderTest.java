@@ -23,11 +23,12 @@ public class SubmitOrderTest {
         landingPage.goTo();
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
 
-        List<WebElement> products = productCatalogue.getProductList();
+        //List<WebElement> products = productCatalogue.getProductList();
 
         productCatalogue.addProductToCart(productName);
 
-        Thread.sleep(4000);
+
+        //Thread.sleep(4000);
         CartPage cartPage = productCatalogue.goToCartPage();
 
 

@@ -15,16 +15,11 @@ public class ConfirmationPage extends AbstractComponent {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(css = ".hero-primary")
     WebElement confirmationMessage;
 
     public String getConfirmationMessage() {
         String confirmation = confirmationMessage.getText();
         return confirmation;
-
-
     }
-
-
 }

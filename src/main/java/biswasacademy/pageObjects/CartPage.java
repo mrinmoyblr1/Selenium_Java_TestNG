@@ -20,22 +20,16 @@ public class CartPage extends AbstractComponent {
     // PageFactory design pattern
     @FindBy(css = ".cartSection h3")
     List<WebElement> cartProducts;
-
-
     @FindBy(css = "li[class='totalRow'] button[type='button']")
     WebElement checkOutEle;
-
 
     // Below is the method to perform login action
     public boolean verifyProductDisplaying(String productName) {
         return cartProducts.stream().anyMatch(product -> product.getText().equalsIgnoreCase(productName));
     }
 
-
     public CheckoutPage goToCheckOut() {
         checkOutEle.click();
         return new CheckoutPage(driver);
     }
-
-
 }
