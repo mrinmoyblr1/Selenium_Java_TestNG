@@ -25,19 +25,16 @@ public class CartPage extends AbstractComponent {
     @FindBy(css = "li[class='totalRow'] button[type='button']")
     WebElement checkOutEle;
 
-    public void clickCheckOutButton() {
-        checkOutEle.click();
-    }
-
-
-
-
-
-
-
 
     // Below is the method to perform login action
     public boolean verifyProductDisplaying(String productName) {
         return cartProducts.stream().anyMatch(product -> product.getText().equalsIgnoreCase(productName));
     }
+
+
+    public void goToCheckOut() {
+        checkOutEle.click();
+    }
+
+
 }
