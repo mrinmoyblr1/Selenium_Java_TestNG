@@ -37,7 +37,7 @@ public class SubmitOrderTest {
         CheckoutPage checkoutPage = cartPage.goToCheckOut();
 
 
-        checkoutPage.selectCountry("United States");
+        checkoutPage.selectCountry("India");
         ConfirmationPage confirmationPage = checkoutPage.submitOrder();
 
 

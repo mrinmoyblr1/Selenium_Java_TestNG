@@ -18,29 +18,22 @@ public class ProductCatalogue extends AbstractComponent {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(className = "card-body")
     List<WebElement> products;
-
     @FindBy(css = ".ng-animating")
     WebElement spinner;
-
-
     By productsBy = By.className("card-body");
     By addToCartBy = By.cssSelector(".card-body button:last-of-type");
     By toastMessage = By.cssSelector("#toast-container");
-//    By ng-animating- By.cssSelector(".ng-animating");
 
-
+    //    By ng-animating- By.cssSelector(".ng-animating");
     //Action methods
     public List<WebElement> getProductList() {
         waitForElementToAppear(productsBy);
         return products;
     }
 
-
     public WebElement getProductByName(String productName) {
-
         WebElement prod = getProductList().stream().
                 filter(product -> product.findElement(By.cssSelector("b"))
                         .getText().equalsIgnoreCase(productName)).findFirst().orElse(null);
@@ -53,8 +46,4 @@ public class ProductCatalogue extends AbstractComponent {
         waitForElementToAppear(toastMessage);
         //waitForElementToDisappear(spinner);
     }
-
-
 }
-
-
