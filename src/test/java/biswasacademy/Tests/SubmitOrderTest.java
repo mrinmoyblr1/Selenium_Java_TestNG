@@ -1,7 +1,10 @@
 package biswasacademy.Tests;
 
 import biswasacademy.TestComponents.BaseTest;
-import biswasacademy.pageObjects.*;
+import biswasacademy.pageObjects.CartPage;
+import biswasacademy.pageObjects.CheckoutPage;
+import biswasacademy.pageObjects.ConfirmationPage;
+import biswasacademy.pageObjects.ProductCatalogue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,8 +14,6 @@ public class SubmitOrderTest extends BaseTest {
     @Test
     public void submitOrder() throws IOException, InterruptedException {
         String productName = "ZARA COAT 3";
-
-        LandingPage landingPage = launchApplication();
 
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
         productCatalogue.addProductToCart(productName);
@@ -29,6 +30,5 @@ public class SubmitOrderTest extends BaseTest {
         System.out.println(confirmation);
         Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
         Thread.sleep(2000);
-        driver.quit();
     }
 }
