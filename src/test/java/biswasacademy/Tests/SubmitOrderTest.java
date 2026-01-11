@@ -5,6 +5,7 @@ import biswasacademy.pageObjects.CartPage;
 import biswasacademy.pageObjects.CheckoutPage;
 import biswasacademy.pageObjects.ConfirmationPage;
 import biswasacademy.pageObjects.ProductCatalogue;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -36,10 +37,15 @@ public class SubmitOrderTest extends BaseTest {
 
     @Test(dependsOnMethods = {"submitOrder"})
     public void OrderHistoryTest(){
+        ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
+        driver.findElement(By.cssSelector("[routerlink*='myorders']")).click();
+
+
+
+
+
 
 
     }
-
-
 
 }
