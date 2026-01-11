@@ -12,6 +12,7 @@ public class SubmitOrderTest extends BaseTest {
 
     @Test
     public void submitOrder() throws IOException, InterruptedException {
+        System.out.println("Submit Order Test");
 
 
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
@@ -35,6 +36,7 @@ public class SubmitOrderTest extends BaseTest {
 
     @Test(dependsOnMethods = {"submitOrder"})
     public void OrderHistoryTest() throws InterruptedException {
+        System.out.println("Order History Test");
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
         OrderPage orderPage = productCatalogue.goToOrdersPage();
         Assert.assertTrue(orderPage.verifyOrderDisplaying(productName));
