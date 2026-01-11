@@ -27,6 +27,9 @@ public class LandingPage extends AbstractComponent {
     WebElement submit;
 
 
+    public void goTo() {
+        driver.get("https://rahulshettyacademy.com/client/#/auth/login");
+    }
 
     // Action class. Below is the method to perform login Action
     public ProductCatalogue loginApplication(String email, String password) {
@@ -37,10 +40,6 @@ public class LandingPage extends AbstractComponent {
         return productCatalogue;
 
 
-    }
-
-    public void goTo() {
-        driver.get("https://rahulshettyacademy.com/client/#/auth/login");
     }
 
 

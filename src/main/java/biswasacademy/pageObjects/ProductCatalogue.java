@@ -20,8 +20,10 @@ public class ProductCatalogue extends AbstractComponent {
 
     @FindBy(className = "card-body")
     List<WebElement> products;
+
     @FindBy(css = ".ng-animating")
     WebElement spinner;
+
     By productsBy = By.className("card-body");
     By addToCartBy = By.cssSelector(".card-body button:last-of-type");
     By toastMessage = By.cssSelector("#toast-container");
