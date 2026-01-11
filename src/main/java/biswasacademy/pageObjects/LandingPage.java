@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LandingPage extends AbstractComponent {
     WebDriver driver;
 
+    // Constructor
     public LandingPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
@@ -25,11 +26,17 @@ public class LandingPage extends AbstractComponent {
     @FindBy(id = "login")
     WebElement submit;
 
-    // Below is the method to perform login action
-    public void loginApplication(String email, String password) {
+
+
+    // Action class. Below is the method to perform login Action
+    public ProductCatalogue loginApplication(String email, String password) {
         userEmail.sendKeys(email);
         passwordEle.sendKeys(password);
         submit.click();
+        ProductCatalogue productCatalogue = new ProductCatalogue(driver);
+        return productCatalogue;
+
+
     }
 
     public void goTo() {

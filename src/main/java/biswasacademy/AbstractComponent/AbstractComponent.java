@@ -1,5 +1,6 @@
 package biswasacademy.AbstractComponent;
 
+import biswasacademy.pageObjects.CartPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,8 +24,9 @@ public class AbstractComponent {
     WebElement cartHeader;
 
     // Action methods
-    public void goToCartPage() {
+    public CartPage goToCartPage() {
         cartHeader.click();
+        return new CartPage(driver);
     }
 
 

@@ -1,14 +1,10 @@
 package biswasacademy;
 
-import biswasacademy.pageObjects.CartPage;
-import biswasacademy.pageObjects.LandingPage;
-import biswasacademy.pageObjects.ProductCatalogue;
+import biswasacademy.pageObjects.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.time.Duration;
@@ -25,39 +21,30 @@ public class SubmitOrderTest {
 
         LandingPage landingPage = new LandingPage(driver);
         landingPage.goTo();
-        landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
+        ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
 
         //=======================================================
-        ProductCatalogue productCatalogue = new ProductCatalogue(driver);
+
         List<WebElement> products = productCatalogue.getProductList();
         //=======================================================
         productCatalogue.addProductToCart(productName);
         //=======================================================
-        productCatalogue.goToCartPage();
+        CartPage cartPage = productCatalogue.goToCartPage();
 
         //=======================================================
-        CartPage cartPage = new CartPage(driver);
+
         boolean match = cartPage.verifyProductDisplaying(productName);
         Assert.assertTrue(match);
         //=======================================================
-        cartPage.clickCheckOutButton();
+        CheckoutPage checkoutPage = cartPage.goToCheckOut();
+        //=======================================================
 
 
+        checkoutPage.selectCountry("United States");
+        ConfirmationPage confirmationPage = checkoutPage.submitOrder();
 
 
-
-        Actions a = new Actions(driver);
-        a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "India").build().perform();
-
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
-
-        driver.findElement(By.cssSelector(".ta-item:nth-of-type(2)")).click();
-        // This is a very important cssSelector
-        //    .ta-item:nth-of-type(2)
-        // Below is a alternative xPath selector
-        //    //button[contains(@class,'ta-item')][2]
-        driver.findElement(By.cssSelector(".action__submit")).click();
-        String confirmation = driver.findElement(By.cssSelector(".hero-primary")).getText();
+        String confirmation = confirmationPage.getConfirmationMessage();
         System.out.println(confirmation);
         Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
         Thread.sleep(2000);
