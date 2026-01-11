@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class ErrorValidations extends BaseTest {
+public class ErrorValidationsTest extends BaseTest {
     @Test
     public void loginErrorValidation() {
 

@@ -32,7 +32,7 @@ public class BaseTest {
             System.out.println("Edge is not supported yet");
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         return driver;
 
     }

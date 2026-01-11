@@ -31,4 +31,15 @@ public class SubmitOrderTest extends BaseTest {
         Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
         Thread.sleep(2000);
     }
+
+    // To verify ZARA COAT 3 is displaying in the order summary page
+
+    @Test(dependsOnMethods = {"submitOrder"})
+    public void OrderHistoryTest(){
+
+
+    }
+
+
+
 }
