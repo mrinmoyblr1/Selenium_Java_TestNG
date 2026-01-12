@@ -50,11 +50,13 @@ public class SubmitOrderTest extends BaseTest {
         map.put("password", "Anjali@12");
         map.put("product", "ZARA COAT 3");
 
+        HashMap<String, String> map1 = new HashMap<>();
+        map1.put("email", "mrinmoy.blr@gmail.com");
+        map1.put("password", "Anjali@12");
+        map1.put("product", "ADIDAS ORIGINAL");
 
         return new Object[][]{
-                {map},
-                {"mrinmoy.blr@gmail.com", "Anjali@12", "ADIDAS ORIGINAL"},
-                {"mrinmoy.blr@gmail.com", "Anjali@12", "iphone 13 pro"}
+                {map}, {map1}
         };
     }
 
