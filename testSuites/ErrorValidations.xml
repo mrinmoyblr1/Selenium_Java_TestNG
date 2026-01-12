@@ -4,7 +4,7 @@
 <suite name="Suite">
     <test name="Submit Order Test">
         <classes>
-<!--            <class name="biswasacademy.Tests.SubmitOrderTest"/>-->
+            <!--            <class name="biswasacademy.Tests.SubmitOrderTest"/>-->
         </classes>
     </test>
     <test name="Error Validation Test">

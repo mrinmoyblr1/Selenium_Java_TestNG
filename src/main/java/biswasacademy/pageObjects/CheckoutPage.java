@@ -18,6 +18,7 @@ public class CheckoutPage extends AbstractComponent {
     @FindBy(css = ".ta-item:nth-of-type(2)")
     WebElement selectCountry;
     By results = By.cssSelector(".ta-results");
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
