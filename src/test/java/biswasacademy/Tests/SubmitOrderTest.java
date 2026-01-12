@@ -2,10 +2,13 @@ package biswasacademy.Tests;
 
 import biswasacademy.TestComponents.BaseTest;
 import biswasacademy.pageObjects.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -44,11 +47,21 @@ public class SubmitOrderTest extends BaseTest {
         Thread.sleep(3000);
     }
 
+
+    public void getScreenShot() {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        
+
+
+    }
+
+
     @DataProvider(name = "getData")
     public Object[][] getData() throws IOException {
 
         List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "/src/test/java/biswasacademy/data/PurchaseOrder.json");
-        return new Object[][]   {{data.get(0)}, {data.get(1)}
+        return new Object[][]{{data.get(0)}, {data.get(1)}
         };
     }
 
