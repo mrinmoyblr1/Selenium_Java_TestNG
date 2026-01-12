@@ -11,16 +11,15 @@ import java.io.IOException;
 public class SubmitOrderTest extends BaseTest {
     String productName = "ZARA COAT 3";
 
-    @Test
-    public void submitOrder() throws IOException, InterruptedException {
-        System.out.println("Submit Order Test");
+    @Test(dataProvider = "getData", groups = {"Purchase"})
+    public void submitOrder(String email, String password, String productNameFromDataProvider) throws IOException, InterruptedException {
+        System.out.println("submitOrder Test");
 
-
-        ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
-        productCatalogue.addProductToCart(productName);
+        ProductCatalogue productCatalogue = landingPage.loginApplication(email, password);
+        productCatalogue.addProductToCart(productNameFromDataProvider);
 
         CartPage cartPage = productCatalogue.goToCartPage();
-        boolean match = cartPage.verifyProductDisplaying(productName);
+        boolean match = cartPage.verifyProductDisplaying(productNameFromDataProvider);
         Assert.assertTrue(match);
 
         CheckoutPage checkoutPage = cartPage.goToCheckOut();
@@ -34,7 +33,6 @@ public class SubmitOrderTest extends BaseTest {
     }
 
     // To verify ZARA COAT 3 is displaying in the order summary page
-
     @Test(dependsOnMethods = {"submitOrder"})
     public void OrderHistoryTest() throws InterruptedException {
         System.out.println("Order History Test");
@@ -44,9 +42,13 @@ public class SubmitOrderTest extends BaseTest {
         Thread.sleep(3000);
     }
 
-    @DataProvider
+    @DataProvider(name = "getData")
     public Object[][] getData() {
-        return new Object[][]{{"mrinmoy.blr@gmail.com", "Anjali@12"}, {"mrinmoy.blr2@gmail.com", "Anjali@12"}};
+        return new Object[][]{
+                {"mrinmoy.blr@gmail.com", "Anjali@12", "ZARA COAT 3"},
+                {"mrinmoy.blr@gmail.com", "Anjali@12", "ADIDAS ORIGINAL"},
+                {"mrinmoy.blr@gmail.com", "Anjali@12", "iphone 13 pro"}
+                };
     }
 
-}
+    }
