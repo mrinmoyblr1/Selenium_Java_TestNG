@@ -35,6 +35,9 @@ public class SubmitOrderTest extends BaseTest {
         String confirmation = confirmationPage.getConfirmationMessage();
         System.out.println(confirmation);
         Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
+
+        getScreenShot("submitOrder");
+
         Thread.sleep(2000);
     }
 
