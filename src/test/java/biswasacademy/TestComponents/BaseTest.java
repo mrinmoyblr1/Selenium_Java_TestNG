@@ -22,8 +22,8 @@ import java.util.Properties;
 public class BaseTest {
     public WebDriver driver;
     public LandingPage landingPage;
-    //Properties prop;
 
+    //Properties prop;
     public WebDriver initializeDriver() throws IOException {
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
@@ -43,21 +43,16 @@ public class BaseTest {
         return driver;
     }
 
-
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
         // Read json to String
         String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
         // Convert String to HashMap using Jackson Library
         // Jackson databind
-
         ObjectMapper mapper = new ObjectMapper();
         List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
         });
         return data;
     }
-
-
-
 
     @BeforeMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
@@ -73,5 +68,4 @@ public class BaseTest {
     public void tearDown() {
         driver.close();
     }
-
 }
