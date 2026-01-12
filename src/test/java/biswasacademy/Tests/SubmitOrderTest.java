@@ -7,19 +7,20 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class SubmitOrderTest extends BaseTest {
     String productName = "ZARA COAT 3";
 
     @Test(dataProvider = "getData", groups = {"Purchase"})
-    public void submitOrder(String email, String password, String productNameFromDataProvider) throws IOException, InterruptedException {
+    public void submitOrder(HashMap<String, String> input) throws IOException, InterruptedException {
         System.out.println("submitOrder Test");
 
-        ProductCatalogue productCatalogue = landingPage.loginApplication(email, password);
-        productCatalogue.addProductToCart(productNameFromDataProvider);
+        ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
+        productCatalogue.addProductToCart(input.get("product"));
 
         CartPage cartPage = productCatalogue.goToCartPage();
-        boolean match = cartPage.verifyProductDisplaying(productNameFromDataProvider);
+        boolean match = cartPage.verifyProductDisplaying(input.get("product"));
         Assert.assertTrue(match);
 
         CheckoutPage checkoutPage = cartPage.goToCheckOut();
@@ -44,11 +45,17 @@ public class SubmitOrderTest extends BaseTest {
 
     @DataProvider(name = "getData")
     public Object[][] getData() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("email", "mrinmoy.blr@gmail.com");
+        map.put("password", "Anjali@12");
+        map.put("product", "ZARA COAT 3");
+
+
         return new Object[][]{
-                {"mrinmoy.blr@gmail.com", "Anjali@12", "ZARA COAT 3"},
+                {map},
                 {"mrinmoy.blr@gmail.com", "Anjali@12", "ADIDAS ORIGINAL"},
                 {"mrinmoy.blr@gmail.com", "Anjali@12", "iphone 13 pro"}
-                };
+        };
     }
 
-    }
+}
