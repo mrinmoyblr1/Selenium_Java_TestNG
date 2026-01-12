@@ -9,8 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class ExtentReportsTest {
     ExtentReports extent;
 
@@ -38,13 +36,12 @@ public class ExtentReportsTest {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        //driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://rahulshettyacademy.com/client/#/auth/login");
         System.out.println(driver.getTitle());
 
         test.fail("Result does not match:  Login Failed");
-        test.addScreenCaptureFromPath("src/test/resources/rahul.png");
+//        test.addScreenCaptureFromPath(System.getProperty("user.dir") + "/reports/biswas.png");
+        //test.addScreenCaptureFromBase64String(System.getProperty("user.dir") + "/reports/biswas.png");
 
         extent.flush();
         Thread.sleep(3000);
