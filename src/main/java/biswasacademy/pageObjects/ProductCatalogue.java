@@ -19,6 +19,7 @@ public class ProductCatalogue extends AbstractComponent {
     By addToCartBy = By.cssSelector(".card-body button:last-of-type");
     By toastMessage = By.cssSelector("#toast-container");
     By getProductNameLocator = By.cssSelector("b");
+
     public ProductCatalogue(WebDriver driver) {
         super(driver);
         this.driver = driver;
