@@ -23,8 +23,6 @@ public class ExtentReportsTest {
         extent = new ExtentReports();
         extent.attachReporter(reporter);
         extent.setSystemInfo("Tester", "Biswas Academy");
-
-
     }
 
 
