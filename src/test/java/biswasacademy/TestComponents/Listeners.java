@@ -35,6 +35,7 @@ public class Listeners implements ITestListener {
         // Taking Screenshot here
         // Take Screenshot
         // Assached with the Report
+        getScreenShot(result.getMethod().getMethodName())
         test.addScreenCaptureFromPath()
 
 
