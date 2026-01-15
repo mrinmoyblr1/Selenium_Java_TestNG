@@ -4,14 +4,17 @@ import biswasacademy.resources.ExtentReporterNG;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import java.io.IOException;
+
 
 public class Listeners implements ITestListener {
 
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ExtentTest test;
+    BaseTest baseTest = new BaseTest();
 
 
     @Override
@@ -32,39 +35,16 @@ public class Listeners implements ITestListener {
         System.out.println("Test failed:.......... " + result.getName());
         test.fail("Test Failed");
         test.fail(result.getThrowable()); // It will print error details in Report
-        // Taking Screenshot here
-        // Take Screenshot
-        // Assached with the Report
-        getScreenShot(result.getMethod().getMethodName())
-        test.addScreenCaptureFromPath()
 
+        // Taking Screenshot here and attached with Reports
+        String filePath;
+        try {
+            filePath = baseTest.getScreenShot(result.getMethod().getMethodName());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-    }
-
-
-    @Override
-    public void onTestSkipped(ITestResult result) {
-    }
-
-
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-    }
-
-
-    @Override
-    public void onTestFailedWithTimeout(ITestResult result) {
-        this.onTestFailure(result);
-    }
-
-
-    @Override
-    public void onStart(ITestContext context) {
-    }
-
-
-    @Override
-    public void onFinish(ITestContext context) {
+        test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
     }
 
 

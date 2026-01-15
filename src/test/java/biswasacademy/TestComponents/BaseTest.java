@@ -72,6 +72,7 @@ public class BaseTest {
     }
 
 
+    //Code to take Screenshot
     public String getScreenShot(String testCaseName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
