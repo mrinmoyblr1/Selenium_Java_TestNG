@@ -2,14 +2,10 @@ package biswasacademy.Tests;
 
 import biswasacademy.TestComponents.BaseTest;
 import biswasacademy.pageObjects.*;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +32,7 @@ public class SubmitOrderTest extends BaseTest {
         System.out.println(confirmation);
         Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
 
-        getScreenShot("submitOrder");
+        getScreenShot("submitOrder", driver);
 
         Thread.sleep(2000);
     }
@@ -50,9 +46,6 @@ public class SubmitOrderTest extends BaseTest {
         Assert.assertTrue(orderPage.verifyOrderDisplaying(productName));
         Thread.sleep(3000);
     }
-
-
-
 
 
     @DataProvider(name = "getData")
