@@ -9,6 +9,9 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class ErrorValidationsTest extends BaseTest {
+
+
+
     @Test(groups = {"ErrorHandling"})
     public void LoginErrorValidation() {
         System.out.println("loginErrorValidation");
@@ -17,6 +20,8 @@ public class ErrorValidationsTest extends BaseTest {
         Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
         System.out.println("Error message displayed" + ": " + landingPage.getErrorMessage());
     }
+
+
 
 
     @Test

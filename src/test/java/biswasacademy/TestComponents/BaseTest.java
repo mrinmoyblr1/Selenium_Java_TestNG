@@ -56,6 +56,8 @@ public class BaseTest {
         return data;
     }
 
+
+
     @BeforeMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public LandingPage launchApplication() throws IOException {
@@ -65,6 +67,8 @@ public class BaseTest {
         return landingPage;
     }
 
+
+
     @AfterMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public void tearDown() {
@@ -73,7 +77,7 @@ public class BaseTest {
 
 
     //Code to take Screenshot
-    public String getScreenShot(String testCaseName) throws IOException {
+    public String getScreenShot(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
         File file = new File(System.getProperty("user.dir") + "screenshots/" + testCaseName + ".png");
