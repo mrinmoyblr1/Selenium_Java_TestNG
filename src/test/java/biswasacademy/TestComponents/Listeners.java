@@ -16,10 +16,9 @@ public class Listeners implements ITestListener {
     WebDriver driver = null;
     BaseTest baseTest = new BaseTest();
 
+
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ExtentTest test;
-
-
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
 
