@@ -20,8 +20,8 @@ public class Listeners implements ITestListener {
     WebDriver driver = null;
 
     //ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
-    ThreadLocal extentTest = new ThreadLocal();  // Thread safe
-
+    //ThreadLocal extentTest = new ThreadLocal();  // Thread safe
+    ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
 
     @Override
@@ -32,14 +32,12 @@ public class Listeners implements ITestListener {
     }
 
 
-
-
     @Override
     public void onTestSuccess(ITestResult result) {
         extentTest.get().log(Status.PASS, "Test Passed");
+
+
     }
-
-
 
 
     @Override
