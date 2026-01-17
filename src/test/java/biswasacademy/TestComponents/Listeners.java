@@ -13,14 +13,13 @@ import java.io.IOException;
 
 
 public class Listeners implements ITestListener {
+    WebDriver driver = null;
+    BaseTest baseTest = new BaseTest();
 
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ExtentTest test;
-    BaseTest baseTest = new BaseTest();
-    WebDriver driver = null;
 
-    //ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
-    //ThreadLocal extentTest = new ThreadLocal();  // Thread safe
+
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
 
