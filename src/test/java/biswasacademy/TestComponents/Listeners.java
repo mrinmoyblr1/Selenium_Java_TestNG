@@ -19,28 +19,39 @@ public class Listeners implements ITestListener {
     BaseTest baseTest = new BaseTest();
     WebDriver driver = null;
 
+    //ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    ThreadLocal extentTest = new ThreadLocal();  // Thread safe
+
+
 
     @Override
     public void onTestStart(ITestResult result) {
         //ExtentTest test = extent.createTest(result.getName()).info("Login to RahulShetty Academy");
         test = extent.createTest(result.getMethod().getMethodName());
+        extentTest.set(test);  // Unique thread ID(ErrorValidationTest) -> test will be attached with Reports
     }
+
+
 
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        test.log(Status.PASS, "Test Passed");
-        test.pass("Test Passed");
+        extentTest.get().log(Status.PASS, "Test Passed");
     }
+
+
 
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("Test failed:.......... " + result.getName());
-        test.fail("Test Failed");
-        test.fail(result.getThrowable()); // It will print error details in Report
+//        System.out.println("Test failed:.......... " + result.getName());
+//        test.fail("Test Failed");
+//        extentTest.get().log(Status.FAIL, "Test Failed"); // Unique thread ID(ErrorValidationTest) will be called
+//        test.fail(result.getThrowable()); // It will print error details in Report
+        extentTest.get().fail(result.getThrowable());
 
 
+        // Below code will handle driver from Test class
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
         } catch (Exception e1) {
@@ -55,8 +66,8 @@ public class Listeners implements ITestListener {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
 
-        test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
     }
 
 
