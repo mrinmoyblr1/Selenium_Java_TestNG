@@ -48,7 +48,7 @@ public class Listeners implements ITestListener {
         extentTest.get().fail(result.getThrowable());
 
 
-        // Below code will handle driver from Test class
+        //The code below will handle the driver from the Test class
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
         } catch (Exception e1) {
@@ -56,7 +56,7 @@ public class Listeners implements ITestListener {
         }
 
 
-        // Taking Screenshot here and attached with Reports
+        // Taking a screenshot here and attaching it to Reports
         String filePath;
         try {
             filePath = baseTest.getScreenShot(result.getMethod().getMethodName(), driver);
