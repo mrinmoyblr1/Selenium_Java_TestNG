@@ -17,7 +17,5 @@ public class ExtentReporterNG {
         extent.attachReporter(reporter);
         extent.setSystemInfo("Tester", "Biswas Academy");
         return extent;
-
-
     }
 }
