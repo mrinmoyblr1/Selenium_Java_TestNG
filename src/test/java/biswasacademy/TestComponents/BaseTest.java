@@ -42,17 +42,16 @@ public class BaseTest {
         //String browser = prop.getProperty("browser");
 
 
-        if (browserName.contains("chrome")) {
+        if (browserName.toLowerCase().contains("chrome")) {
 
             ChromeOptions options = new ChromeOptions();
             WebDriverManager.chromedriver().setup();
 
-            if (browserName.contains("headless")) {
-                options.addArguments("--headless");
-                options.addArguments("--maximize-window");
+            if (browserName.toLowerCase().contains("headless")) {
+                options.addArguments("headless");
             }
             driver = new ChromeDriver(options);
-            driver.manage().window().setSize(new Dimension(1440, 900)); // We can set the custom window size
+            driver.manage().window().setSize(new Dimension(2440, 1900)); // We can set the custom window size
             // driver.manage().window().maximize();
 
 
