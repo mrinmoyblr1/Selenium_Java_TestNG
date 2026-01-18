@@ -119,7 +119,7 @@
                         <configuration>
                             <!-- Optional: Specify the test suite XML file to run -->
                             <suiteXmlFiles>
-                                <suiteXmlFile>testSuites/Purchase.xml</suiteXmlFile>
+                                <suiteXmlFile>testSuites/ErrorValidations.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
