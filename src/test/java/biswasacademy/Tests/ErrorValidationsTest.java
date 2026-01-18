@@ -1,6 +1,7 @@
 package biswasacademy.Tests;
 
 import biswasacademy.TestComponents.BaseTest;
+import biswasacademy.TestComponents.Retry;
 import biswasacademy.pageObjects.CartPage;
 import biswasacademy.pageObjects.ProductCatalogue;
 import org.testng.Assert;
@@ -11,8 +12,7 @@ import java.io.IOException;
 public class ErrorValidationsTest extends BaseTest {
 
 
-
-    @Test(groups = {"ErrorHandling"})
+    @Test(groups = {"ErrorHandling"}, retryAnalyzer = Retry.class)
     public void LoginErrorValidation() {
         System.out.println("loginErrorValidation");
 
@@ -20,8 +20,6 @@ public class ErrorValidationsTest extends BaseTest {
         Assert.assertEquals("Incorrect email or password. 123", landingPage.getErrorMessage());
         System.out.println("Error message displayed" + ": " + landingPage.getErrorMessage());
     }
-
-
 
 
     @Test
