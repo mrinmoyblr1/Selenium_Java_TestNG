@@ -10,7 +10,7 @@
         <methods>
           <include name="launchApplication"/>
           <include name="tearDown"/>
-          <include name="LoginErrorValidation"/>
+          <include name="ProductErrorValidation"/>
         </methods>
       </class> <!-- biswasacademy.Tests.ErrorValidationsTest -->
     </classes>
