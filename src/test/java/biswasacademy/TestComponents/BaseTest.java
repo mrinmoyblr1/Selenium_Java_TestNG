@@ -35,11 +35,8 @@ public class BaseTest {
         prop.load(fis);
 
 
-        //String browser=System.setProperty("browser", prop.getProperty("browser"));
         // Below is Jjava Ternary operator
         String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
-
-        //String browser = prop.getProperty("browser");
 
 
         if (browserName.toLowerCase().contains("chrome")) {
