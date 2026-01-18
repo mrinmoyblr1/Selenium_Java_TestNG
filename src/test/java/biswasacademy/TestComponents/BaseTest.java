@@ -34,6 +34,7 @@ public class BaseTest {
 
 
         //String browser=System.setProperty("browser", prop.getProperty("browser"));
+        // Below is Jjava Ternary operator
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
 
         //String browser = prop.getProperty("browser");
