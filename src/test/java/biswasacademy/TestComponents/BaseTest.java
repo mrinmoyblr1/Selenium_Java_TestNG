@@ -36,31 +36,28 @@ public class BaseTest {
 
         //String browser=System.setProperty("browser", prop.getProperty("browser"));
         // Below is Jjava Ternary operator
-        String browser = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
+        String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
 
         //String browser = prop.getProperty("browser");
 
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browserName.contains("chrome")) {
+
             ChromeOptions options = new ChromeOptions();
             WebDriverManager.chromedriver().setup();
 
-            options.addArguments("--start-maximized");
-            options.addArguments("--disable-notifications");
-            options.addArguments("--disable-popup-blocking");
-            options.addArguments("--disable-infobars");
-            options.addArguments("--disable-extensions");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--headless");
+            if (browserName.contains("headless")) {
+                options.addArguments("--headless");
+                options.addArguments("--maximize-window");
+            }
+
             driver = new ChromeDriver(options);
 
 
-        } else if (browser.equalsIgnoreCase("firefox")) {
+        } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else if (browser.equalsIgnoreCase("edge")) {
+        } else if (browserName.equalsIgnoreCase("edge")) {
             System.out.println("Edge is not supported yet");
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
