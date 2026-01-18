@@ -11,32 +11,23 @@ import org.testng.ITestResult;
 
 import java.io.IOException;
 
-
 public class Listeners implements ITestListener {
     WebDriver driver = null;
     BaseTest baseTest = new BaseTest();
-
-
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ExtentTest test;
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
-
     @Override
     public void onTestStart(ITestResult result) {
-        //ExtentTest test = extent.createTest(result.getName()).info("Login to RahulShetty Academy");
         test = extent.createTest(result.getMethod().getMethodName());
         extentTest.set(test);  // Unique thread ID(ErrorValidationTest) -> test will be attached with Reports
     }
 
-
     @Override
     public void onTestSuccess(ITestResult result) {
         extentTest.get().log(Status.PASS, "Test Passed");
-
-
     }
-
 
     @Override
     public void onTestFailure(ITestResult result) {
@@ -45,16 +36,12 @@ public class Listeners implements ITestListener {
 //        extentTest.get().log(Status.FAIL, "Test Failed"); // Unique thread ID(ErrorValidationTest) will be called
 //        test.fail(result.getThrowable()); // It will print error details in Report
         extentTest.get().fail(result.getThrowable());
-
-
         //The code below will handle the driver from the Test class
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
         } catch (Exception e1) {
             e1.printStackTrace();
         }
-
-
         // Taking a screenshot here and attaching it to Reports
         String filePath;
         try {
@@ -63,15 +50,11 @@ public class Listeners implements ITestListener {
             throw new RuntimeException(e);
         }
         extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
-
     }
-
 
     @Override
     public void onFinish(ITestContext context) {
         extent.flush();
         extent.flush();
     }
-
-
 }
