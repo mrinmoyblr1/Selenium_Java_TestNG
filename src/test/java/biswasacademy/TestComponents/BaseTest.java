@@ -37,8 +37,6 @@ public class BaseTest {
 
         // Below is Jjava Ternary operator
         String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
-
-
         if (browserName.toLowerCase().contains("chrome")) {
 
             ChromeOptions options = new ChromeOptions();
@@ -48,7 +46,7 @@ public class BaseTest {
                 options.addArguments("headless");
             }
             driver = new ChromeDriver(options);
-            driver.manage().window().setSize(new Dimension(2440, 1900)); // We can set the custom window size
+            driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
             // driver.manage().window().maximize();
 
 
