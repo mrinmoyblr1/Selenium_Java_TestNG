@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -30,13 +31,20 @@ public class BaseTest {
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
         prop.load(fis);
-        String browser = prop.getProperty("browser");
+
+
+        //String browser=System.setProperty("browser", prop.getProperty("browser"));
+        String browser = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
+
+        //String browser = prop.getProperty("browser");
+
+
         if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("edge")) {
             System.out.println("Edge is not supported yet");
         }
@@ -57,7 +65,6 @@ public class BaseTest {
     }
 
 
-
     @BeforeMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public LandingPage launchApplication() throws IOException {
@@ -66,7 +73,6 @@ public class BaseTest {
         landingPage.goTo();
         return landingPage;
     }
-
 
 
     @AfterMethod(alwaysRun = true)

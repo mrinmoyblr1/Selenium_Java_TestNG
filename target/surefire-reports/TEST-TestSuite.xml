@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="66.134" tests="6" errors="0" skipped="1" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="74.127" tests="7" errors="0" skipped="1" failures="1">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="webdriver.chrome.driver" value="/Users/mrinmoy/.cache/selenium/chromedriver/mac-arm64/143.0.7499.192/chromedriver"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/surefire/surefirebooter-20260117215718334_3.jar /Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/surefire 2026-01-17T21-57-18_290-jvmRun1 surefire-20260117215718334_1tmp surefire_0-20260117215718334_2tmp"/>
+    <property name="sun.java.command" value="/Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/surefire/surefirebooter-20260117225128643_3.jar /Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/surefire 2026-01-17T22-51-28_601-jvmRun1 surefire-20260117225128643_1tmp surefire_0-20260117225128643_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/test-classes:/Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/classes:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-java/4.33.0/selenium-java-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-api/4.33.0/selenium-api-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.33.0/selenium-chrome-driver-4.33.0.jar:/Users/mrinmoy/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.33.0/selenium-chromium-driver-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-json/4.33.0/selenium-json-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.33.0/selenium-manager-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v135/4.33.0/selenium-devtools-v135-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v136/4.33.0/selenium-devtools-v136-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v137/4.33.0/selenium-devtools-v137-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.33.0/selenium-edge-driver-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.33.0/selenium-firefox-driver-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-http/4.33.0/selenium-http-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.33.0/selenium-ie-driver-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.33.0/selenium-remote-driver-4.33.0.jar:/Users/mrinmoy/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/Users/mrinmoy/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/Users/mrinmoy/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/mrinmoy/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-api/1.50.0/opentelemetry-api-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-context/1.50.0/opentelemetry-context-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.50.0/opentelemetry-exporter-logging-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.50.0/opentelemetry-sdk-common-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.50.0/opentelemetry-sdk-extension-autoconfigure-spi-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.50.0/opentelemetry-sdk-extension-autoconfigure-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.50.0/opentelemetry-sdk-trace-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.50.0/opentelemetry-sdk-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.50.0/opentelemetry-sdk-metrics-1.50.0.jar:/Users/mrinmoy/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.50.0/opentelemetry-sdk-logs-1.50.0.jar:/Users/mrinmoy/.m2/repository/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-os/4.33.0/selenium-os-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.33.0/selenium-safari-driver-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/seleniumhq/selenium/selenium-support/4.33.0/selenium-support-4.33.0.jar:/Users/mrinmoy/.m2/repository/org/testng/testng/7.11.0/testng-7.11.0.jar:/Users/mrinmoy/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/Users/mrinmoy/.m2/repository/org/jcommander/jcommander/1.83/jcommander-1.83.jar:/Users/mrinmoy/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/Users/mrinmoy/.m2/repository/commons-io/commons-io/2.21.0/commons-io-2.21.0.jar:/Users/mrinmoy/.m2/repository/io/github/bonigarcia/webdrivermanager/6.3.3/webdrivermanager-6.3.3.jar:/Users/mrinmoy/.m2/repository/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar:/Users/mrinmoy/.m2/repository/com/google/errorprone/error_prone_annotations/2.41.0/error_prone_annotations-2.41.0.jar:/Users/mrinmoy/.m2/repository/com/github/docker-java/docker-java/3.6.0/docker-java-3.6.0.jar:/Users/mrinmoy/.m2/repository/com/github/docker-java/docker-java-core/3.6.0/docker-java-core-3.6.0.jar:/Users/mrinmoy/.m2/repository/com/github/docker-java/docker-java-api/3.6.0/docker-java-api-3.6.0.jar:/Users/mrinmoy/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/Users/mrinmoy/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.6.0/docker-java-transport-httpclient5-3.6.0.jar:/Users/mrinmoy/.m2/repository/com/github/docker-java/docker-java-transport/3.6.0/docker-java-transport-3.6.0.jar:/Users/mrinmoy/.m2/repository/net/java/dev/jna/jna/5.17.0/jna-5.17.0.jar:/Users/mrinmoy/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/Users/mrinmoy/.m2/repository/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar:/Users/mrinmoy/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/Users/mrinmoy/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/Users/mrinmoy/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.4.3/httpclient5-5.4.3.jar:/Users/mrinmoy/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.3.4/httpcore5-5.3.4.jar:/Users/mrinmoy/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.3.4/httpcore5-h2-5.3.4.jar:/Users/mrinmoy/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.20.1/jackson-databind-2.20.1.jar:/Users/mrinmoy/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.20/jackson-annotations-2.20.jar:/Users/mrinmoy/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.20.1/jackson-core-2.20.1.jar:/Users/mrinmoy/.m2/repository/com/aventstack/extentreports/5.1.1/extentreports-5.1.1.jar:/Users/mrinmoy/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.6/rxjava-3.1.6.jar:/Users/mrinmoy/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/mrinmoy/.m2/repository/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar:/Users/mrinmoy/.m2/repository/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar:"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/surefire/surefirebooter-20260117215718334_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/mrinmoy/Documents/Development/Selenium_Java_TestNG/target/surefire/surefirebooter-20260117225128643_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="20.0.2+9-78"/>
@@ -41,6 +41,7 @@
     <property name="os.version" value="26.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
+    <property name="browser" value="Firefox"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="localRepository" value="/Users/mrinmoy/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
@@ -48,6 +49,7 @@
     <property name="java.version" value="20.0.2"/>
     <property name="user.dir" value="/Users/mrinmoy/Documents/Development/Selenium_Java_TestNG"/>
     <property name="os.arch" value="aarch64"/>
+    <property name="webdriver.gecko.driver" value="/Users/mrinmoy/.cache/selenium/geckodriver/mac-arm64/0.36.0/geckodriver"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/mrinmoy/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
@@ -59,49 +61,30 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="submitOrder[{password=Anjali@12, product=ZARA COAT 3, email=mrinmoy.blr@gmail.com}](1)" classname="biswasacademy.Tests.SubmitOrderTest" time="9.76">
+  <testcase name="submitOrder[{password=Anjali@12, product=ZARA COAT 3, email=mrinmoy.blr@gmail.com}](1)" classname="biswasacademy.Tests.SubmitOrderTest" time="8.894">
     <system-out><![CDATA[submitOrder Test
 THANKYOU FOR THE ORDER.
 ]]></system-out>
     <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-Jan 17, 2026 9:57:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 143
-Jan 17, 2026 9:57:19 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
-WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="submitOrder[{password=Anjali@12, product=ADIDAS ORIGINAL, email=mrinmoy.blr@gmail.com}](2)" classname="biswasacademy.Tests.SubmitOrderTest" time="8.729">
+  <testcase name="submitOrder[{password=Anjali@12, product=ADIDAS ORIGINAL, email=mrinmoy.blr@gmail.com}](2)" classname="biswasacademy.Tests.SubmitOrderTest" time="9.083">
     <system-out><![CDATA[submitOrder Test
 THANKYOU FOR THE ORDER.
 ]]></system-out>
-    <system-err><![CDATA[Jan 17, 2026 9:57:34 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 143
-Jan 17, 2026 9:57:34 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
-WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="OrderHistoryTest" classname="biswasacademy.Tests.SubmitOrderTest" time="9.962">
+  <testcase name="OrderHistoryTest" classname="biswasacademy.Tests.SubmitOrderTest" time="7.582">
     <system-out><![CDATA[Order History Test
 ]]></system-out>
-    <system-err><![CDATA[Jan 17, 2026 9:57:49 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 143
-Jan 17, 2026 9:57:49 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
-WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
   <testcase name="LoginErrorValidation" classname="biswasacademy.Tests.ErrorValidationsTest" time="0.0">
     <skipped message="expected [Incorrect email or password.] but found [Incorrect email or password. 123]"/>
     <system-out><![CDATA[loginErrorValidation
 ]]></system-out>
-    <system-err><![CDATA[Jan 17, 2026 9:58:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 143
-Jan 17, 2026 9:58:01 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
-WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="LoginErrorValidation" classname="biswasacademy.Tests.ErrorValidationsTest" time="4.715">
+  <testcase name="LoginErrorValidation" classname="biswasacademy.Tests.ErrorValidationsTest" time="1.039">
     <failure message="expected [Incorrect email or password.] but found [Incorrect email or password. 123]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or password. 123]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
@@ -133,9 +116,10 @@ WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need t
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
 	at org.testng.TestNG.runSuites(TestNG.java:1112)
 	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
@@ -143,18 +127,17 @@ WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need t
 ]]></failure>
     <system-out><![CDATA[loginErrorValidation
 ]]></system-out>
-    <system-err><![CDATA[Jan 17, 2026 9:58:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 143
-Jan 17, 2026 9:58:07 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
-WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
-  <testcase name="ProductErrorValidation" classname="biswasacademy.Tests.ErrorValidationsTest" time="8.877">
+  <testcase name="ProductErrorValidation" classname="biswasacademy.Tests.ErrorValidationsTest" time="5.787">
     <system-out><![CDATA[productErrorValidation
 ]]></system-out>
-    <system-err><![CDATA[Jan 17, 2026 9:58:14 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  </testcase>
+  <testcase name="initialDemo" classname="biswasacademy.EntentReportsD.ExtentReportsTest" time="7.941">
+    <system-out><![CDATA[Let's Shop
+]]></system-out>
+    <system-err><![CDATA[Jan 17, 2026 10:52:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 143
-Jan 17, 2026 9:58:14 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Jan 17, 2026 10:52:35 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for 143.0.7499.194. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.33.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
