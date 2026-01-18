@@ -24,10 +24,12 @@ public class Listeners implements ITestListener {
         extentTest.set(test);  // Unique thread ID(ErrorValidationTest) -> test will be attached with Reports
     }
 
+
     @Override
     public void onTestSuccess(ITestResult result) {
         extentTest.get().log(Status.PASS, "Test Passed");
     }
+
 
     @Override
     public void onTestFailure(ITestResult result) {
@@ -36,12 +38,15 @@ public class Listeners implements ITestListener {
 //        extentTest.get().log(Status.FAIL, "Test Failed"); // Unique thread ID(ErrorValidationTest) will be called
 //        test.fail(result.getThrowable()); // It will print error details in Report
         extentTest.get().fail(result.getThrowable());
+
+
         //The code below will handle the driver from the Test class
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
         } catch (Exception e1) {
             e1.printStackTrace();
         }
+
         // Taking a screenshot here and attaching it to Reports
         String filePath;
         try {
@@ -51,6 +56,8 @@ public class Listeners implements ITestListener {
         }
         extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
     }
+
+
 
     @Override
     public void onFinish(ITestContext context) {
