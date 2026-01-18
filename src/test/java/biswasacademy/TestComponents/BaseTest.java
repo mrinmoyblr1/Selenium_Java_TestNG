@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -51,8 +52,8 @@ public class BaseTest {
                 options.addArguments("--maximize-window");
             }
             driver = new ChromeDriver(options);
-            // driver.manage().window().setSize(new Dimension(1440, 900)); // We can set the custom window size
-            driver.manage().window().maximize();
+            driver.manage().window().setSize(new Dimension(1440, 900)); // We can set the custom window size
+            // driver.manage().window().maximize();
 
 
         } else if (browserName.equalsIgnoreCase("firefox")) {
