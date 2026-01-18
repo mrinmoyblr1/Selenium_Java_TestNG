@@ -3,7 +3,7 @@
 
 <suite name="Suite" parallel="true" thread-count="10">
     <listeners>
-        <listener class-name="biswasacademy.TestComponents.Listeners"/>
+<!--        <listener class-name="biswasacademy.TestComponents.Listeners"/>-->
     </listeners>
 
 
