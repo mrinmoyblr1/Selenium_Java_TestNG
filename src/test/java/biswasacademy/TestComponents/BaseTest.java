@@ -68,11 +68,14 @@ public class BaseTest {
 
 
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
-        // Read json to String
+        // Read JSON to String
         String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
+
         // Convert String to HashMap using Jackson Library
         // Jackson databind
+        // ObjectMapper class of Jackson library is responsible to convert JSON content to Java objects and vice versa
         ObjectMapper mapper = new ObjectMapper();
+        // Here we are converting JSON content to List of HashMap
         List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
         });
         return data;
