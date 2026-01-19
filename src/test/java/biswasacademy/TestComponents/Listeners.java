@@ -59,10 +59,8 @@ public class Listeners implements ITestListener {
     }
 
 
-
     @Override
     public void onFinish(ITestContext context) {
-        extent.flush();
         extent.flush();
     }
 }
