@@ -28,12 +28,15 @@ public class BaseTest {
     public WebDriver driver;
     public LandingPage landingPage;
 
-    //Properties prop;
+
+
+
+
+
     public WebDriver initializeDriver() throws IOException {
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
         prop.load(fis);
-
 
         // Below is Jjava Ternary operator
         String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
@@ -49,7 +52,6 @@ public class BaseTest {
             driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
             // driver.manage().window().maximize();
 
-
         } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
@@ -60,6 +62,9 @@ public class BaseTest {
         //driver.manage().window().maximize();
         return driver;
     }
+
+
+
 
 
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
@@ -74,6 +79,8 @@ public class BaseTest {
     }
 
 
+
+
     @BeforeMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public LandingPage launchApplication() throws IOException {
@@ -84,11 +91,16 @@ public class BaseTest {
     }
 
 
+
+
     @AfterMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public void tearDown() {
         driver.close();
     }
+
+
+
 
 
     //Code to take Screenshot

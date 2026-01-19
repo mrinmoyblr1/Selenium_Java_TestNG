@@ -9,13 +9,13 @@
 
     <test name="Submit Order Test" parallel="tests" thread-count="4">
         <classes>
-<!--            <class name="biswasacademy.Tests.SubmitOrderTest"/>-->
+            <class name="biswasacademy.Tests.SubmitOrderTest"/>
         </classes>
     </test>
 
     <test name="Error Validation Test" parallel="tests" thread-count="4">
         <classes>
-            <class name="biswasacademy.Tests.ErrorValidationsTest"/>
+<!--            <class name="biswasacademy.Tests.ErrorValidationsTest"/>-->
         </classes>
     </test>
 </suite>
