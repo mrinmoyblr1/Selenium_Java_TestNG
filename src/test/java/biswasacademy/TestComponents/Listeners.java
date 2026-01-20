@@ -17,6 +17,7 @@ public class Listeners implements ITestListener {
 
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ExtentTest test;
+
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
     @Override
