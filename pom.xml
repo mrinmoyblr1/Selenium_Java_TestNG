@@ -80,7 +80,7 @@
                         <configuration>
                             <!-- Optional: Specify the test suite XML file to run -->
                             <suiteXmlFiles>
-                                <suiteXmlFile>testSuites/testng4.xml</suiteXmlFile>
+                                <suiteXmlFile>testSuites/testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>

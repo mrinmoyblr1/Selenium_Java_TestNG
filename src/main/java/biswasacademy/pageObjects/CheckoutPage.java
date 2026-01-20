@@ -12,11 +12,14 @@ public class CheckoutPage extends AbstractComponent {
     WebDriver driver;
     // PageFactory design pattern
     @FindBy(css = ".action__submit")
-    WebElement submit;
+    private WebElement submit;
+
     @FindBy(css = "[placeholder='Select Country']")
-    WebElement country;
+    private WebElement country;
+
     @FindBy(css = ".ta-item:nth-of-type(2)")
-    WebElement selectCountry;
+    private WebElement selectCountry;
+
     By results = By.cssSelector(".ta-results");
 
     public CheckoutPage(WebDriver driver) {
