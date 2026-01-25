@@ -31,8 +31,6 @@ public class BaseTest {
 
 
 
-
-
     public WebDriver initializeDriver() throws IOException {
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
@@ -82,8 +80,6 @@ public class BaseTest {
     }
 
 
-
-
     @BeforeMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public LandingPage launchApplication() throws IOException {
@@ -94,16 +90,11 @@ public class BaseTest {
     }
 
 
-
-
     @AfterMethod(alwaysRun = true)
     // Here alwaysRun = true will make sure the @BeforeMethod and @AfterMethod will run for all the tests
     public void tearDown() {
         driver.close();
     }
-
-
-
 
 
     //Code to take Screenshot
