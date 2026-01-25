@@ -31,8 +31,8 @@ public class LandingPage extends AbstractComponent {
     }
 
 
-    public void goTo() {
-        driver.get("https://rahulshettyacademy.com/client/#/auth/login");
+    public void goTo(String baseUrl) {
+        driver.get(baseUrl);
     }
 
     // Action class. Below is the method to perform login Action

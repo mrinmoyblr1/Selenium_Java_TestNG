@@ -27,12 +27,13 @@ import java.util.Properties;
 public class BaseTest {
     public WebDriver driver;
     public LandingPage landingPage;
+    Properties prop;
 
 
 
 
     public WebDriver initializeDriver() throws IOException {
-        Properties prop = new Properties();
+        prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
         prop.load(fis);
 
@@ -85,7 +86,7 @@ public class BaseTest {
     public LandingPage launchApplication() throws IOException {
         driver = initializeDriver();
         landingPage = new LandingPage(driver);
-        landingPage.goTo();
+        landingPage.goTo(prop.getProperty("baseUrl"));
         return landingPage;
     }
 
