@@ -18,11 +18,15 @@ public class SubmitOrderTest extends BaseTest {
         System.out.println("submitOrder Test");
 
         ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
-        productCatalogue.addProductToCart(input.get("product"));
 
+        productCatalogue.addProductToCart(input.get("product"));
         CartPage cartPage = productCatalogue.goToCartPage();
+
+
         boolean match = cartPage.verifyProductDisplaying(input.get("product"));
         Assert.assertTrue(match);
+
+
 
         CheckoutPage checkoutPage = cartPage.goToCheckOut();
         checkoutPage.selectCountry("India");
