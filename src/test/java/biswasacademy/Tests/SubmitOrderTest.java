@@ -15,7 +15,7 @@ public class SubmitOrderTest extends BaseTest {
 
     @Test(dataProvider = "getData", groups = {"Purchase"})
     public void submitOrder(HashMap<String, String> input) throws IOException, InterruptedException {
-        System.out.println("submitOrder Test");
+
 
         ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 
@@ -25,7 +25,6 @@ public class SubmitOrderTest extends BaseTest {
 
         boolean match = cartPage.verifyProductDisplaying(input.get("product"));
         Assert.assertTrue(match);
-
 
 
         CheckoutPage checkoutPage = cartPage.goToCheckOut();
