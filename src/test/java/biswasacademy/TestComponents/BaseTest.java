@@ -62,6 +62,8 @@ public class BaseTest {
     }
 
 
+    // MB
+
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
         // Read JSON to String
         String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
