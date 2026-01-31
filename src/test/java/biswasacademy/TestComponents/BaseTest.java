@@ -31,7 +31,6 @@ public class BaseTest {
 
 
 
-
     public WebDriver initializeDriver() throws IOException {
         prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
@@ -61,9 +60,6 @@ public class BaseTest {
         //driver.manage().window().maximize();
         return driver;
     }
-
-
-
 
 
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
