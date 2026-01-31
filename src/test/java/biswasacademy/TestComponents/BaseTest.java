@@ -62,7 +62,10 @@ public class BaseTest {
     }
 
 
-    // MB
+
+
+
+
 
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
         // Read JSON to String
@@ -94,6 +97,7 @@ public class BaseTest {
     public void tearDown() {
         driver.close();
     }
+
 
 
     //Code to take Screenshot
