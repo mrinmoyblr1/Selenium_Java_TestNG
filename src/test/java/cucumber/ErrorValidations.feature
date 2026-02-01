@@ -1,5 +1,6 @@
 Feature: Error validation
 
+  @ErrorValidation
   Scenario Outline: Error validation Test
     Given I landed on Ecommerce Page
     When Logged in with username "<name>" and password "<password>"
