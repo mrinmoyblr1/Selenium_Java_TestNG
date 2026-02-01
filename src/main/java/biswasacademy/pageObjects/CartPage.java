@@ -10,9 +10,11 @@ import java.util.List;
 
 public class CartPage extends AbstractComponent {
     WebDriver driver;
+
     // PageFactory design pattern
     @FindBy(css = ".cartSection h3")
     List<WebElement> cartProducts;
+
     @FindBy(css = "li[class='totalRow'] button[type='button']")
     WebElement checkOutEle;
 
