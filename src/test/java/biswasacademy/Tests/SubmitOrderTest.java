@@ -23,6 +23,9 @@ public class SubmitOrderTest extends BaseTest {
         productCatalogue.addProductToCart(input.get("product"));
 
 
+
+
+
         CartPage cartPage = productCatalogue.goToCartPage();
 
 

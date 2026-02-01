@@ -1,9 +1,9 @@
 package biswasacademy.stepDefinitions;
 
 import biswasacademy.TestComponents.BaseTest;
-import biswasacademy.pageObjects.CartPage;
 import biswasacademy.pageObjects.LandingPage;
 import biswasacademy.pageObjects.ProductCatalogue;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
@@ -30,9 +30,11 @@ public class StepDefinitionsImp extends BaseTest {
     @When("I add product {string} to Cart")
     public void I_add_product_to_Cart(String productName) throws InterruptedException {
         productCatalogue.addProductToCart(productName);
-        CartPage cartPage = productCatalogue.goToCartPage();
+    }
 
 
+    @And("Checkout {string} and Submit the order")
+    public void Checkout_and_Submit_the_order(String productName) {
 
     }
 
