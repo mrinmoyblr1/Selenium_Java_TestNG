@@ -11,8 +11,12 @@ import java.util.List;
 
 public class ProductCatalogue extends AbstractComponent {
     WebDriver driver;
+
+
     @FindBy(className = "card-body")
     List<WebElement> products;
+
+
     @FindBy(css = ".ng-animating")
     WebElement spinner;
     By productsBy = By.className("card-body");
@@ -33,12 +37,18 @@ public class ProductCatalogue extends AbstractComponent {
         return products;
     }
 
+
+
+
     public WebElement getProductByName(String productName) {
         WebElement prod = getProductList().stream().
                 filter(product -> product.findElement(getProductNameLocator)
                         .getText().equalsIgnoreCase(productName)).findFirst().orElse(null);
         return prod;
     }
+
+
+
 
     public void addProductToCart(String productName) {
         WebElement prod = getProductByName(productName);

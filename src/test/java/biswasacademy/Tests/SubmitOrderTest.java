@@ -20,7 +20,7 @@ public class SubmitOrderTest extends BaseTest {
         ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 
 
-        
+
 
         productCatalogue.addProductToCart(input.get("product"));
         CartPage cartPage = productCatalogue.goToCartPage();
