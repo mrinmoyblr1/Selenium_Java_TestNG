@@ -152,7 +152,42 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>ApiTests</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.2.5</version> <!-- Use a recent version -->
+                        <configuration>
+                            <!-- Optional: Specify the test suite XML file to run -->
+                            <suiteXmlFiles>
+                                <suiteXmlFile>testSuites/ApiTest.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+
+
+
+
+        </profile>
+
+
+
+
+
     </profiles>
+
+
+
+
+
+
+
 
 
 </project>
