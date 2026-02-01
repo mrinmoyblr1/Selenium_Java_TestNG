@@ -22,24 +22,15 @@ public class SubmitOrderTest extends BaseTest {
 
         productCatalogue.addProductToCart(input.get("product"));
 
-
-
-
-
         CartPage cartPage = productCatalogue.goToCartPage();
-
 
         boolean match = cartPage.verifyProductDisplaying(input.get("product"));
         Assert.assertTrue(match);
-
 
         CheckoutPage checkoutPage = cartPage.goToCheckOut();
         checkoutPage.selectCountry("India");
 
         ConfirmationPage confirmationPage = checkoutPage.submitOrder();
-
-
-
 
         String confirmation = confirmationPage.getConfirmationMessage();
         System.out.println(confirmation);
@@ -49,9 +40,6 @@ public class SubmitOrderTest extends BaseTest {
 
         Thread.sleep(2000);
     }
-
-
-
 
 
     // To verify ZARA COAT 3 is displaying in the order summary page

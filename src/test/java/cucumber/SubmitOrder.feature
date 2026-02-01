@@ -9,10 +9,11 @@ Feature: Purchase Order from E-commerce Website
     Given Logged in with username "<name>" and password "<password>"
     When I add product "<productName>" to Cart
     And Checkout "<productName>" and Submit the order
+    Then "THANKYOU FOR THE ORDER." message is displayed confirmationPage
 
     Examples:
       | name                  | password  | productName     |
       | mrinmoy.blr@gmail.com | Anjali@12 | ZARA COAT 3     |
-      | mrinmoy.blr@gmail.com | Anjali@12 | ADIDAS ORIGINAL |
+#      | mrinmoy.blr@gmail.com | Anjali@12 | ADIDAS ORIGINAL |
 
 

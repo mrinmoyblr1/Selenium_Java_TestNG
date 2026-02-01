@@ -3,6 +3,7 @@ package biswasacademy.stepDefinitions;
 import biswasacademy.TestComponents.BaseTest;
 import biswasacademy.pageObjects.*;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
@@ -45,6 +46,19 @@ public class StepDefinitionsImp extends BaseTest {
         checkoutPage.selectCountry("India");
 
         confirmationPage = checkoutPage.submitOrder();
+    }
+
+
+    @Then("{string} message is displayed confirmationPage")
+    public void message_is_displayed_confirmation_page(String string) throws IOException, InterruptedException {
+        String confirmation = confirmationPage.getConfirmationMessage();
+        System.out.println(confirmation);
+        Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
+
+        getScreenShot("submitOrder", driver);
+
+        Thread.sleep(2000);
+        driver.close();
     }
 
 
