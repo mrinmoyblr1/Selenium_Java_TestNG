@@ -11,7 +11,8 @@ Feature: Purchase Order from E-commerce Website
     And Checkout "<productName>" and Submit the order
 
     Examples:
-      | name                  | password  | productName |
-      | mrinmoy.blr@gmail.com | Anjali@12 | ZARA COAT 3 |
+      | name                  | password  | productName     |
+      | mrinmoy.blr@gmail.com | Anjali@12 | ZARA COAT 3     |
+      | mrinmoy.blr@gmail.com | Anjali@12 | ADIDAS ORIGINAL |
 
 
