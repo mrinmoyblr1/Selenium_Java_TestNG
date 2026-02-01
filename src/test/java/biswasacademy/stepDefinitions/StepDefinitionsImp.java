@@ -62,6 +62,15 @@ public class StepDefinitionsImp extends BaseTest {
     }
 
 
+    @Then("{string} message is displayed")
+    public void message_is_displayed(String string) {
+        Assert.assertEquals(string, landingPage.getErrorMessage());
+        System.out.println("Error message displayed" + ": " + landingPage.getErrorMessage());
+        driver.close();
+
+    }
+
+
 }
 
 
