@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/cucumber",
         glue = "biswasacademy.stepDefinitions",
         plugin = {"html:target/cucumber.html"},
-        monochrome = true, tags = "@ErrorValidation")
+        monochrome = true, tags = "@ErrorValidation or @Regression")
 public class TestNGTestRunner extends AbstractTestNGCucumberTests {
 
 }

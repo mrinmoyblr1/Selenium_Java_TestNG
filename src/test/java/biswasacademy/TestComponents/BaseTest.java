@@ -47,8 +47,8 @@ public class BaseTest {
                 options.addArguments("headless");
             }
             driver = new ChromeDriver(options);
-            driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
-            // driver.manage().window().maximize();
+            //driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
+            driver.manage().window().maximize();
 
         } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
