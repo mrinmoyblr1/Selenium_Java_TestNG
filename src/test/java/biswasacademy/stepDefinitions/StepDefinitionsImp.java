@@ -27,7 +27,7 @@ public class StepDefinitionsImp extends BaseTest {
     }
 
 
-    @When("I add product {string} to Cart")
+        @When("I add product {string} to Cart")
     public void I_add_product_to_Cart(String productName) throws InterruptedException {
         productCatalogue.addProductToCart(productName);
     }

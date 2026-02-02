@@ -47,8 +47,8 @@ public class BaseTest {
 //            JavascriptExecutor js = (JavascriptExecutor) driver;
 //            js.executeScript("document.body.style.zoom='70%'"); // Set zoom to 70%
 
-            driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
-            //driver.manage().window().maximize();
+            //driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
+            driver.manage().window().maximize();
 
         } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
