@@ -5,10 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -30,7 +27,6 @@ public class BaseTest {
     Properties prop;
 
 
-
     public WebDriver initializeDriver() throws IOException {
         prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
@@ -47,8 +43,12 @@ public class BaseTest {
                 options.addArguments("headless");
             }
             driver = new ChromeDriver(options);
-            //driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
-            driver.manage().window().maximize();
+
+//            JavascriptExecutor js = (JavascriptExecutor) driver;
+//            js.executeScript("document.body.style.zoom='70%'"); // Set zoom to 70%
+
+            driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
+            //driver.manage().window().maximize();
 
         } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
@@ -60,11 +60,6 @@ public class BaseTest {
         //driver.manage().window().maximize();
         return driver;
     }
-
-
-
-
-
 
 
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
@@ -97,7 +92,6 @@ public class BaseTest {
     public void tearDown() {
         driver.close();
     }
-
 
 
     //Code to take Screenshot
