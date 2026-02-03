@@ -32,20 +32,21 @@ public class BaseTest {
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/biswasacademy/resources/GlobalData.properties");
         prop.load(fis);
 
-        // Below is Jjava Ternary operator
+        // Below is Java Ternary operator
         String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
         if (browserName.toLowerCase().contains("chrome")) {
 
             ChromeOptions options = new ChromeOptions();
+
             WebDriverManager.chromedriver().setup();
+
 
             if (browserName.toLowerCase().contains("headless")) {
                 options.addArguments("headless");
             }
+
             driver = new ChromeDriver(options);
 
-//            JavascriptExecutor js = (JavascriptExecutor) driver;
-//            js.executeScript("document.body.style.zoom='70%'"); // Set zoom to 70%
 
             //driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
             driver.manage().window().maximize();
