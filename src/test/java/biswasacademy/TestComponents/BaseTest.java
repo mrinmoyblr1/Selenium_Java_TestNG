@@ -46,15 +46,20 @@ public class BaseTest {
             }
 
             driver = new ChromeDriver(options);
-
-
             //driver.manage().window().setSize(new Dimension(2440, 2100)); // We can set the custom window size
             driver.manage().window().maximize();
 
-        } else if (browserName.equalsIgnoreCase("firefox")) {
+        }
+
+
+        else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else if (browserName.equalsIgnoreCase("edge")) {
+            driver.manage().window().maximize();
+        }
+
+
+        else if (browserName.equalsIgnoreCase("edge")) {
             System.out.println("Edge is not supported yet");
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
