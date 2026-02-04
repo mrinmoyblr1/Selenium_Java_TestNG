@@ -45,7 +45,7 @@ public class SubmitOrderTest extends BaseTest {
     // To verify ZARA COAT 3 is displaying in the order summary page
     @Test(dependsOnMethods = {"submitOrder"})
     public void OrderHistoryTest() throws InterruptedException {
-        System.out.println("Order History Test");
+        System.out.println("Order History Test...");
         ProductCatalogue productCatalogue = landingPage.loginApplication("mrinmoy.blr@gmail.com", "Anjali@12");
         OrderPage orderPage = productCatalogue.goToOrdersPage();
         Assert.assertTrue(orderPage.verifyOrderDisplaying(productName));
