@@ -153,8 +153,9 @@
             </build>
         </profile>
 
+
         <profile>
-            <id>ApiTests</id>
+            <id>CucumberTests</id>
             <build>
                 <plugins>
                     <plugin>
@@ -162,32 +163,19 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>3.2.5</version> <!-- Use a recent version -->
                         <configuration>
-                            <!-- Optional: Specify the test suite XML file to run -->
-                            <suiteXmlFiles>
-                                <suiteXmlFile>testSuites/ApiTest.xml</suiteXmlFile>
-                            </suiteXmlFiles>
+
+                            <includes>
+                                <include>**/TestNGTestRunner/*.java</include>
+                            </includes>
+
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
-
-
-
-
         </profile>
 
 
-
-
-
     </profiles>
-
-
-
-
-
-
-
 
 
 </project>
