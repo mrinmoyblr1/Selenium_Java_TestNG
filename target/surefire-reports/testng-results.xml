@@ -1,63 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-03T23:47:54 EST" name="Surefire suite" finished-at="2026-02-03T23:48:21 EST" duration-ms="27157">
+  <suite started-at="2026-02-04T10:41:12 EST" name="Suite" finished-at="2026-02-04T10:42:06 EST" duration-ms="53931">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@4c15e7fd]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
+      <group name="ErrorHandling">
+        <method signature="ErrorValidationsTest.LoginErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" name="LoginErrorValidation" class="biswasacademy.Tests.ErrorValidationsTest"/>
+      </group> <!-- ErrorHandling -->
+      <group name="Purchase">
+        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" name="submitOrder" class="biswasacademy.Tests.SubmitOrderTest"/>
+      </group> <!-- Purchase -->
     </groups>
-    <test started-at="2026-02-03T23:47:54 EST" name="Surefire test" finished-at="2026-02-03T23:48:21 EST" duration-ms="27157">
-      <class name="cucumber.TestNGTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.TestNGTestRunner@4c15e7fd]" started-at="2026-02-03T23:47:54 EST" name="setUpClass" finished-at="2026-02-03T23:47:54 EST" duration-ms="128" status="PASS">
+    <test started-at="2026-02-04T10:41:12 EST" name="Submit Order Test" finished-at="2026-02-04T10:41:52 EST" duration-ms="40082">
+      <class name="biswasacademy.Tests.SubmitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:12 EST" name="launchApplication" finished-at="2026-02-04T10:41:17 EST" duration-ms="5121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:17 EST" name="submitOrder" data-provider="getData" finished-at="2026-02-04T10:41:26 EST" duration-ms="8358" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1c26273d]]>
+                <![CDATA[{password=Anjali@12, product=ZARA COAT 3, email=mrinmoy.blr@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@4c15e7fd]" started-at="2026-02-03T23:47:54 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-03T23:48:04 EST" duration-ms="9971" status="PASS">
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:26 EST" name="tearDown" finished-at="2026-02-04T10:41:26 EST" duration-ms="359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:26 EST" name="launchApplication" finished-at="2026-02-04T10:41:31 EST" duration-ms="4448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:31 EST" name="submitOrder" data-provider="getData" finished-at="2026-02-04T10:41:39 EST" duration-ms="8189" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Error validation Test"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Error validation"]]>
+                <![CDATA[{password=Anjali@12, product=ADIDAS ORIGINAL, email=mrinmoy.blr@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@4c15e7fd]" started-at="2026-02-03T23:48:04 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-03T23:48:21 EST" duration-ms="17040" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Positive Test of Submitting the order"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Purchase Order from E-commerce Website"]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:39 EST" name="tearDown" finished-at="2026-02-04T10:41:39 EST" duration-ms="335" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.TestNGTestRunner@4c15e7fd]" started-at="2026-02-03T23:48:21 EST" name="tearDownClass" finished-at="2026-02-03T23:48:21 EST" duration-ms="9" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:39 EST" name="launchApplication" finished-at="2026-02-04T10:41:45 EST" duration-ms="5405" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- cucumber.TestNGTestRunner -->
-    </test> <!-- Surefire test -->
-  </suite> <!-- Surefire suite -->
+        </test-method> <!-- launchApplication -->
+        <test-method signature="OrderHistoryTest()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:45 EST" name="OrderHistoryTest" finished-at="2026-02-04T10:41:52 EST" depends-on-methods="biswasacademy.Tests.SubmitOrderTest.submitOrder" duration-ms="7455" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OrderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:52 EST" name="tearDown" finished-at="2026-02-04T10:41:52 EST" duration-ms="342" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- biswasacademy.Tests.SubmitOrderTest -->
+    </test> <!-- Submit Order Test -->
+    <test started-at="2026-02-04T10:41:12 EST" name="Error Validation Test" finished-at="2026-02-04T10:42:06 EST" duration-ms="53931">
+      <class name="biswasacademy.Tests.ErrorValidationsTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:12 EST" name="launchApplication" finished-at="2026-02-04T10:41:32 EST" duration-ms="19753" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="LoginErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:32 EST" name="LoginErrorValidation" finished-at="2026-02-04T10:41:33 EST" duration-ms="1359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:33 EST" name="tearDown" finished-at="2026-02-04T10:41:34 EST" duration-ms="319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:34 EST" name="launchApplication" finished-at="2026-02-04T10:41:40 EST" duration-ms="6664" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="ProductErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:40 EST" name="ProductErrorValidation" finished-at="2026-02-04T10:42:06 EST" duration-ms="25488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:42:06 EST" name="tearDown" finished-at="2026-02-04T10:42:06 EST" duration-ms="337" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- biswasacademy.Tests.ErrorValidationsTest -->
+    </test> <!-- Error Validation Test -->
+  </suite> <!-- Suite -->
 </testng-results>
