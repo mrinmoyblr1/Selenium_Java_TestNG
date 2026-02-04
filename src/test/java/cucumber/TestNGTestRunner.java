@@ -8,8 +8,8 @@ import io.cucumber.testng.CucumberOptions;
         glue = "biswasacademy.stepDefinitions",
         plugin = {"html:target/cucumber.html"},
         monochrome = true,
-        //tags = "@ErrorValidation or @Regression",
-        tags = "@ErrorValidation"
+        tags = "@ErrorValidation or @Regression"
+//        tags = "@ErrorValidation"
 )
 public class TestNGTestRunner extends AbstractTestNGCucumberTests {
 

@@ -165,7 +165,7 @@
                         <configuration>
 
                             <includes>
-                                <include>**/TestNGTestRunner/*.java</include>
+                                <include>**/TestNGTestRunner.java</include>
                             </includes>
 
                         </configuration>
