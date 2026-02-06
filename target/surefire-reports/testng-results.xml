@@ -2,22 +2,50 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-04T10:41:12 EST" name="Suite" finished-at="2026-02-04T10:42:06 EST" duration-ms="53931">
+  <suite started-at="2026-02-05T19:30:15 EST" name="Suite" finished-at="2026-02-05T19:31:03 EST" duration-ms="47207">
     <groups>
       <group name="ErrorHandling">
-        <method signature="ErrorValidationsTest.LoginErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" name="LoginErrorValidation" class="biswasacademy.Tests.ErrorValidationsTest"/>
+        <method signature="ErrorValidationsTest.LoginErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@247310d0]" name="LoginErrorValidation" class="biswasacademy.Tests.ErrorValidationsTest"/>
       </group> <!-- ErrorHandling -->
       <group name="Purchase">
-        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" name="submitOrder" class="biswasacademy.Tests.SubmitOrderTest"/>
+        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" name="submitOrder" class="biswasacademy.Tests.SubmitOrderTest"/>
       </group> <!-- Purchase -->
     </groups>
-    <test started-at="2026-02-04T10:41:12 EST" name="Submit Order Test" finished-at="2026-02-04T10:41:52 EST" duration-ms="40082">
-      <class name="biswasacademy.Tests.SubmitOrderTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:12 EST" name="launchApplication" finished-at="2026-02-04T10:41:17 EST" duration-ms="5121" status="PASS">
+    <test started-at="2026-02-05T19:30:15 EST" name="Error Validation Test" finished-at="2026-02-05T19:30:35 EST" duration-ms="20106">
+      <class name="biswasacademy.Tests.ErrorValidationsTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@247310d0]" started-at="2026-02-05T19:30:15 EST" name="launchApplication" finished-at="2026-02-05T19:30:23 EST" duration-ms="7886" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:17 EST" name="submitOrder" data-provider="getData" finished-at="2026-02-04T10:41:26 EST" duration-ms="8358" status="PASS">
+        <test-method signature="LoginErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@247310d0]" started-at="2026-02-05T19:30:23 EST" name="LoginErrorValidation" finished-at="2026-02-05T19:30:24 EST" duration-ms="940" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@247310d0]" started-at="2026-02-05T19:30:24 EST" name="tearDown" finished-at="2026-02-05T19:30:25 EST" duration-ms="410" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@247310d0]" started-at="2026-02-05T19:30:25 EST" name="launchApplication" finished-at="2026-02-05T19:30:30 EST" duration-ms="5032" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="ProductErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@247310d0]" started-at="2026-02-05T19:30:30 EST" name="ProductErrorValidation" finished-at="2026-02-05T19:30:35 EST" duration-ms="5429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@247310d0]" started-at="2026-02-05T19:30:35 EST" name="tearDown" finished-at="2026-02-05T19:30:35 EST" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- biswasacademy.Tests.ErrorValidationsTest -->
+    </test> <!-- Error Validation Test -->
+    <test started-at="2026-02-05T19:30:15 EST" name="Submit Order Test" finished-at="2026-02-05T19:31:03 EST" duration-ms="47207">
+      <class name="biswasacademy.Tests.SubmitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:15 EST" name="launchApplication" finished-at="2026-02-05T19:30:21 EST" duration-ms="5979" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:21 EST" name="submitOrder" data-provider="getData" finished-at="2026-02-05T19:30:30 EST" duration-ms="8771" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,15 +56,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:26 EST" name="tearDown" finished-at="2026-02-04T10:41:26 EST" duration-ms="359" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:30 EST" name="tearDown" finished-at="2026-02-05T19:30:31 EST" duration-ms="412" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:26 EST" name="launchApplication" finished-at="2026-02-04T10:41:31 EST" duration-ms="4448" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:31 EST" name="launchApplication" finished-at="2026-02-05T19:30:36 EST" duration-ms="5012" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:31 EST" name="submitOrder" data-provider="getData" finished-at="2026-02-04T10:41:39 EST" duration-ms="8189" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:36 EST" name="submitOrder" data-provider="getData" finished-at="2026-02-05T19:30:48 EST" duration-ms="12306" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,51 +75,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:39 EST" name="tearDown" finished-at="2026-02-04T10:41:39 EST" duration-ms="335" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:48 EST" name="tearDown" finished-at="2026-02-05T19:30:48 EST" duration-ms="422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:39 EST" name="launchApplication" finished-at="2026-02-04T10:41:45 EST" duration-ms="5405" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:48 EST" name="launchApplication" finished-at="2026-02-05T19:30:55 EST" duration-ms="6203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="OrderHistoryTest()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:45 EST" name="OrderHistoryTest" finished-at="2026-02-04T10:41:52 EST" depends-on-methods="biswasacademy.Tests.SubmitOrderTest.submitOrder" duration-ms="7455" status="PASS">
+        <test-method signature="OrderHistoryTest()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:30:55 EST" name="OrderHistoryTest" finished-at="2026-02-05T19:31:02 EST" depends-on-methods="biswasacademy.Tests.SubmitOrderTest.submitOrder" duration-ms="7586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OrderHistoryTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6221a451]" started-at="2026-02-04T10:41:52 EST" name="tearDown" finished-at="2026-02-04T10:41:52 EST" duration-ms="342" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.SubmitOrderTest@6e6f2380]" started-at="2026-02-05T19:31:02 EST" name="tearDown" finished-at="2026-02-05T19:31:03 EST" duration-ms="417" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- biswasacademy.Tests.SubmitOrderTest -->
     </test> <!-- Submit Order Test -->
-    <test started-at="2026-02-04T10:41:12 EST" name="Error Validation Test" finished-at="2026-02-04T10:42:06 EST" duration-ms="53931">
-      <class name="biswasacademy.Tests.ErrorValidationsTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:12 EST" name="launchApplication" finished-at="2026-02-04T10:41:32 EST" duration-ms="19753" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="LoginErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:32 EST" name="LoginErrorValidation" finished-at="2026-02-04T10:41:33 EST" duration-ms="1359" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:33 EST" name="tearDown" finished-at="2026-02-04T10:41:34 EST" duration-ms="319" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:34 EST" name="launchApplication" finished-at="2026-02-04T10:41:40 EST" duration-ms="6664" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="ProductErrorValidation()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:41:40 EST" name="ProductErrorValidation" finished-at="2026-02-04T10:42:06 EST" duration-ms="25488" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:biswasacademy.Tests.ErrorValidationsTest@5afa3c9]" started-at="2026-02-04T10:42:06 EST" name="tearDown" finished-at="2026-02-04T10:42:06 EST" duration-ms="337" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- biswasacademy.Tests.ErrorValidationsTest -->
-    </test> <!-- Error Validation Test -->
   </suite> <!-- Suite -->
 </testng-results>
