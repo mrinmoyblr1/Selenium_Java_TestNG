@@ -19,8 +19,8 @@
     <classes>
       <class name="biswasacademy.Tests.SubmitOrderTest">
         <methods>
+          <include name="submitOrder" invocation-numbers="1"/>
           <include name="launchApplication"/>
-          <include name="submitOrder" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="OrderHistoryTest"/>
         </methods>
