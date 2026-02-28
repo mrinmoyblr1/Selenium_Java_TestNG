@@ -9,7 +9,7 @@ public class CoreJavaBrushUp1 {
         boolean myCard = true;
 
         System.out.println("Brush Up 1");
-        System.out.println(myNum + " is the values in myNum");
+        System.out.println(myNum + " is the values in myNum: ");
         System.out.println(webSite);
         System.out.println(letter);
         System.out.println(dev);
