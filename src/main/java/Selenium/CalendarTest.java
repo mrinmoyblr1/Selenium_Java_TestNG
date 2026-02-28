@@ -11,7 +11,9 @@ import java.util.List;
 
 public class CalendarTest {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/Document-Local/Development_Local/Selenium_Java_TestNG/src/main/java");
+
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
