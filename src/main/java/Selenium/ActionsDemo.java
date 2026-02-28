@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class ActionsDemo {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/mrinmoy/IdeaProjects/Introduction/src/main/java/chromedriver");
         WebDriver driver = new ChromeDriver();
 //        WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
