@@ -38,7 +38,7 @@ public class CalendarTest {
             // Here we are dynamically comparing values between two Lists
             Assert.assertEquals(actualList.get(i).getAttribute("value"), expectedList[i]);
         }
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         driver.quit();
     }
 }
