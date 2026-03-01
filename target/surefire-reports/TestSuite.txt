@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 47.46 s -- in TestSuite
-=======
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 52.18 s -- in TestSuite
->>>>>>> f081fce (BISWAS)
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 44.82 s -- in TestSuite
