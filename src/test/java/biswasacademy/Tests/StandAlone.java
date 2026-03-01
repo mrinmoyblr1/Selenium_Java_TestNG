@@ -16,6 +16,7 @@ import java.util.List;
 public class StandAlone {
     public static void main(String[] args) throws InterruptedException {
         String productName = "ZARA COAT 3";
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -67,7 +68,7 @@ public class StandAlone {
         String confirmation = driver.findElement(By.cssSelector(".hero-primary")).getText();
         System.out.println(confirmation);
         Assert.assertTrue(confirmation.equalsIgnoreCase("Thankyou for the order."));
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.quit();
     }
 }
