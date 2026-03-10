@@ -74,7 +74,7 @@ public class BaseTest {
 
         // Convert String to HashMap using Jackson Library
         // Jackson databind
-        // ObjectMapper class of Jackson library is responsible to convert JSON content to Java objects and vice versa
+        // ObjectMapper class of a Jackson library is responsible to convert JSON content to Java objects and vice versa
         ObjectMapper mapper = new ObjectMapper();
         // Here we are converting JSON content to List of HashMap
         List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
