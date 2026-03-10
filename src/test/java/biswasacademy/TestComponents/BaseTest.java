@@ -107,6 +107,7 @@ public class BaseTest {
         File file = new File(System.getProperty("user.dir") + "screenshots/" + testCaseName + ".png");
         FileUtils.copyFile(source, file);
         return file.getAbsolutePath();
+
     }
 
 
